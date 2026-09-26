@@ -1,0 +1,73 @@
+﻿#  | Portable Python 3.x Interpreter in Modern C
+
+> pocketpy is a portable Python 3.x interpreter, written in C11. It aims to be an alternative to Lua for game scripting, with elegant syntax, powerful features and competitive performance.
+
+- [Welcome to pocketpy](https://pocketpy.github.io/index.md): Welcome to pocketpy
+- [Quick Start](https://pocketpy.github.io/quick-start.md): You have two options to integrate pkpy into your project.
+- [Write C Bindings](https://pocketpy.github.io/bindings.md): In order to use a C/C++ library in python, you need to write bindings for it.
+- [Write C++ Bindings](https://pocketpy.github.io/bindings-cpp.md): pkpy provides a pybind11 compatible layer which allows users to do convenient bindings. Header files are located in the include/pybind11 directory. Make sure you have added -Iinclude to your compiler flags.
+- [Coding Style Guide](https://pocketpy.github.io/coding-style-guide.md): Use four spaces for indentation. Do not use TAB.
+- [Performance](https://pocketpy.github.io/performance.md): Currently, pkpy is as fast as cpython 3.9. Performance results for cpython 3.9 are applicable to for pkpy.
+- [License](https://pocketpy.github.io/license.md): pkpy is licensed under the MIT License.
+
+## Features
+
+- [Basic Features](https://pocketpy.github.io/features/basic.md): The following table shows the basic features of pkpy with respect to cpython.
+- [Comparison with CPython](https://pocketpy.github.io/features/differences.md): cpython is the reference implementation of the Python programming language. It is written in C and is the most widely used implementation of Python.
+- [Deploy Bytecodes](https://pocketpy.github.io/features/deploy.md): The feature requires pocketpy version >= 2.1.7
+- [Debugging](https://pocketpy.github.io/features/debugging.md): To debug a pocketpy program, you need to install our VSCode extension first:
+- [Profiling](https://pocketpy.github.io/features/profiling.md): To profile your pocketpy program, you can run main.exe with --profile flag.
+- [Compute Threads](https://pocketpy.github.io/features/threading.md): pocketpy organizes its state by VM structure. Users can have at maximum 16 VM instances (index from 0 to 15). Each VM instance can only be accessed by exactly one thread at a time.
+- [Undefined Behaviour](https://pocketpy.github.io/features/ub.md): These are the undefined behaviours of pkpy. The behaviour of pkpy is undefined if you do the following things.
+
+## C-API
+
+- [Introduction](https://pocketpy.github.io/c-api/introduction.md): All public functions in the C API are prefixed with py_ in pocketpy.h.
+- [Functions](https://pocketpy.github.io/c-api/functions.md)
+
+## Modules
+
+- [array2d](https://pocketpy.github.io/modules/array2d.md): Efficient general-purpose 2D array.
+- [base64](https://pocketpy.github.io/modules/base64.md): Encode bytes-like object b using the standard Base64 alphabet.
+- [bisect](https://pocketpy.github.io/modules/bisect.md): Return the index where to insert item x in list a, assuming a is sorted.
+- [cmath](https://pocketpy.github.io/modules/cmath.md): Mathematical functions for complex numbers.
+- [collections](https://pocketpy.github.io/modules/collections.md): Return a dict containing the counts of each element in iterable.
+- [cute_png](https://pocketpy.github.io/modules/cute_png.md): This module is optional. Set option PK_BUILD_MODULE_CUTE_PNG to ON in your CMakeLists.txt to enable it.
+- [dataclasses](https://pocketpy.github.io/modules/dataclasses.md): A decorator that is used to add special method to classes, including __init__, __repr__ and __eq__.
+- [datetime](https://pocketpy.github.io/modules/datetime.md): Returns the current date and time as a datetime object.
+- [easing](https://pocketpy.github.io/modules/easing.md): Python wrapper for easing functions.
+- [enum](https://pocketpy.github.io/modules/enum.md): Base class for creating enumerated constants.
+- [functools](https://pocketpy.github.io/modules/functools.md): A decorator that caches a function's return value each time it is called. If called later with the same arguments, the cached value is returned, and not re-evaluated.
+- [gc](https://pocketpy.github.io/modules/gc.md): Garbage collection interface module.
+- [heapq](https://pocketpy.github.io/modules/heapq.md): Push the value item onto the heap, maintaining the heap invariant.
+- [importlib](https://pocketpy.github.io/modules/importlib.md): Reload a previously imported module. The argument must be a module object, so it must have been successfully imported before. This is useful if you have edited the module source file using an external editor and want to try out the new version without leaving the Python interpreter.
+- [json](https://pocketpy.github.io/modules/json.md): JSON serialization and deserialization module.
+- [lz4](https://pocketpy.github.io/modules/lz4.md): This module is optional. Set option PK_BUILD_MODULE_LZ4 to ON in your CMakeLists.txt to enable it.
+- [math](https://pocketpy.github.io/modules/math.md): 3.141592653589793
+- [msgpack](https://pocketpy.github.io/modules/msgpack.md): This module is optional. Set option PK_BUILD_MODULE_MSGPACK to ON in your CMakeLists.txt to enable it.
+- [operator](https://pocketpy.github.io/modules/operator.md): The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, operator.add(x, y) is equivalent to the expression x+y.
+- [periphery](https://pocketpy.github.io/modules/periphery.md): This module is optional. Set option PK_BUILD_MODULE_PERIPHERY to ON in your CMakeLists.txt to enable it.
+- [pickle](https://pocketpy.github.io/modules/pickle.md): Return the pickled representation of an object as a bytes object.
+- [pkpy](https://pocketpy.github.io/modules/pkpy.md): Provide internal access to the pocketpy interpreter.
+- [random](https://pocketpy.github.io/modules/random.md): Set the random seed.
+- [sys](https://pocketpy.github.io/modules/sys.md): The version of pkpy.
+- [time](https://pocketpy.github.io/modules/time.md): Returns the current time in seconds since the epoch as a floating point number.
+- [traceback](https://pocketpy.github.io/modules/traceback.md): Print the exception currently being handled and its traceback. This also works from helper functions called by an exception handler. If no exception is being handled, print nothing.
+- [typing](https://pocketpy.github.io/modules/typing.md): Placeholder module for type hints.
+- [unicodedata](https://pocketpy.github.io/modules/unicodedata.md): Returns the East Asian width of a Unicode character. The width is one of the following values:
+- [vmath](https://pocketpy.github.io/modules/vmath.md): Provide vector math operations.
+
+## GSoC 2026
+
+- [Application Guide](https://pocketpy.github.io/gsoc2026/guide.md): Welcome to the Google Summer of Code 2026 application guide for pocketpy. We are recruiting a student who is passionate about vibe coding and mobile game development.
+- [Project Ideas](https://pocketpy.github.io/gsoc2026/ideas.md): Build a Vibe Coding Agent in Python for Creating Games
+
+## GSoC 2025
+
+- [Application Guide](https://pocketpy.github.io/gsoc2025/guide.md): Before starting, please read the Ideas page and choose a project you are interested in. Set up a C11 compiler, clone pocketpy sources from github and try to build.
+- [Project Ideas](https://pocketpy.github.io/gsoc2025/ideas.md): Difficulty Level: 3/5 (Medium)
+
+## GSoC 2024
+
+- [Application Guide](https://pocketpy.github.io/gsoc2024/guide.md): Before starting, please read the Ideas page and choose a project you are interested in. Set up a C++ compiler, clone pocketpy sources from github and try to build.
+- [Project Ideas](https://pocketpy.github.io/gsoc2024/ideas.md): Difficulty Level: 5/5 (Hard)
