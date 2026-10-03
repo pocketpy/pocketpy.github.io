@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>math | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="math | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="3.141592653589793">
+    <meta name="description" content="Real-number functions and constants. Most functions accept an int or float and return a float; exceptions are noted below. Arguments to native functions are positional.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/math/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/math/">
     <meta property="og:title" content="math | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="3.141592653589793">
+    <meta property="og:description" content="Real-number functions and constants. Most functions accept an int or float and return a float; exceptions are noted below. Arguments to native functions are positional.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/math/">
     <meta name="twitter:title" content="math | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="3.141592653589793">
+    <meta name="twitter:description" content="Real-number functions and constants. Most functions accept an int or float and return a float; exceptions are noted below. Arguments to native functions are positional.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/math.md">
@@ -38,11 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -73,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -97,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -162,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -186,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -226,76 +227,107 @@
 
                 <!-- Page content  -->
 <h1 id="math">math</h1>
-<h3 id="mathpi"><code translate="no" v-pre>math.pi</code></h3>
-<p>3.141592653589793</p>
-<h3 id="mathe"><code translate="no" v-pre>math.e</code></h3>
-<p>2.718281828459045</p>
-<h3 id="mathinf"><code translate="no" v-pre>math.inf</code></h3>
-<p>The <code translate="no" v-pre>inf</code>.</p>
-<h3 id="mathnan"><code translate="no" v-pre>math.nan</code></h3>
-<p>The <code translate="no" v-pre>nan</code>.</p>
-<h3 id="mathceilx"><code translate="no" v-pre>math.ceil(x)</code></h3>
-<p>Return the ceiling of <code translate="no" v-pre>x</code> as a float, the smallest integer value greater than or equal to <code translate="no" v-pre>x</code>.</p>
-<h3 id="mathfabsx"><code translate="no" v-pre>math.fabs(x)</code></h3>
-<p>Return the absolute value of <code translate="no" v-pre>x</code>.</p>
-<h3 id="mathfloorx"><code translate="no" v-pre>math.floor(x)</code></h3>
-<p>Return the floor of <code translate="no" v-pre>x</code> as a float, the largest integer value less than or equal to <code translate="no" v-pre>x</code>.</p>
-<h3 id="mathfsumiterable"><code translate="no" v-pre>math.fsum(iterable)</code></h3>
-<p>Return an accurate floating point sum of values in the iterable. Avoids loss of precision by tracking multiple intermediate partial sums:</p>
-<div id="mathfsumiterable-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">&gt;&gt;&gt; sum([0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1])
-0.9999999999999999
-&gt;&gt;&gt; fsum([0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1])
-1.0</code></pre>
+<p>Real-number functions and constants. Most functions accept an <code translate="no" v-pre>int</code> or
+<code translate="no" v-pre>float</code> and return a <code translate="no" v-pre>float</code>; exceptions are noted below.
+Arguments to native functions are positional.</p>
+<h2 id="available-api">Available API</h2>
+<retype-table copy-text="| Group | Members |
+| --- | --- |
+| Constants | `pi`, `e`, `inf`, `nan` |
+| Rounding | `ceil(x)`, `floor(x)`, `trunc(x)` return integers; `fabs(x)` returns a float. |
+| Aggregation | `fsum(values)` for a list of numbers; `gcd(a, b)` for two integers. |
+| Classification | `isfinite(x)`, `isinf(x)`, `isnan(x)`, `isclose(a, b)` |
+| Powers/logarithms | `exp(x)`, `log(x)`, `log(x, base)`, `log2(x)`, `log10(x)`, `pow(x, y)`, `sqrt(x)`, `cbrt(x)` |
+| Trigonometry | `sin(x)`, `cos(x)`, `tan(x)`, `asin(x)`, `acos(x)`, `atan(x)`, `atan2(y, x)` |
+| Angles | `degrees(radians)`, `radians(degrees)` |
+| Decomposition | `modf(x)`, `fmod(x, y)`, `copysign(x, y)` |
+| Combinatorics | `factorial(n)` for a nonnegative integer. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Group</th>
+<th>Members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constants</td>
+<td><code translate="no" v-pre>pi</code>, <code translate="no" v-pre>e</code>, <code translate="no" v-pre>inf</code>, <code translate="no" v-pre>nan</code></td>
+</tr>
+<tr>
+<td>Rounding</td>
+<td><code translate="no" v-pre>ceil(x)</code>, <code translate="no" v-pre>floor(x)</code>, <code translate="no" v-pre>trunc(x)</code> return integers; <code translate="no" v-pre>fabs(x)</code> returns a float.</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td><code translate="no" v-pre>fsum(values)</code> for a list of numbers; <code translate="no" v-pre>gcd(a, b)</code> for two integers.</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td><code translate="no" v-pre>isfinite(x)</code>, <code translate="no" v-pre>isinf(x)</code>, <code translate="no" v-pre>isnan(x)</code>, <code translate="no" v-pre>isclose(a, b)</code></td>
+</tr>
+<tr>
+<td>Powers/logarithms</td>
+<td><code translate="no" v-pre>exp(x)</code>, <code translate="no" v-pre>log(x)</code>, <code translate="no" v-pre>log(x, base)</code>, <code translate="no" v-pre>log2(x)</code>, <code translate="no" v-pre>log10(x)</code>, <code translate="no" v-pre>pow(x, y)</code>, <code translate="no" v-pre>sqrt(x)</code>, <code translate="no" v-pre>cbrt(x)</code></td>
+</tr>
+<tr>
+<td>Trigonometry</td>
+<td><code translate="no" v-pre>sin(x)</code>, <code translate="no" v-pre>cos(x)</code>, <code translate="no" v-pre>tan(x)</code>, <code translate="no" v-pre>asin(x)</code>, <code translate="no" v-pre>acos(x)</code>, <code translate="no" v-pre>atan(x)</code>, <code translate="no" v-pre>atan2(y, x)</code></td>
+</tr>
+<tr>
+<td>Angles</td>
+<td><code translate="no" v-pre>degrees(radians)</code>, <code translate="no" v-pre>radians(degrees)</code></td>
+</tr>
+<tr>
+<td>Decomposition</td>
+<td><code translate="no" v-pre>modf(x)</code>, <code translate="no" v-pre>fmod(x, y)</code>, <code translate="no" v-pre>copysign(x, y)</code></td>
+</tr>
+<tr>
+<td>Combinatorics</td>
+<td><code translate="no" v-pre>factorial(n)</code> for a nonnegative integer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>Trigonometric arguments and results use radians. <code translate="no" v-pre>modf(x)</code> returns
+<code translate="no" v-pre>(fractional_part, integer_part)</code>, both floats; pass a float to this function.
+<code translate="no" v-pre>copysign(x, y)</code> takes the magnitude of <code translate="no" v-pre>x</code> and the sign of <code translate="no" v-pre>y</code>.</p>
+<div id="available-api-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">import math
+
+assert math.ceil(1.2) == 2
+assert type(math.floor(1.8)) is int
+assert math.gcd(18, 24) == 6
+assert math.fsum([0.1] * 10) == 1.0
+assert math.isclose(math.sin(math.pi / 2), 1.0)
+assert math.modf(2.5) == (0.5, 2.0)</code></pre>
 </doc-codeblock></div>
-<h3 id="mathgcda-b"><code translate="no" v-pre>math.gcd(a, b)</code></h3>
-<p>Return the greatest common divisor of the integers <code translate="no" v-pre>a</code> and <code translate="no" v-pre>b</code>.</p>
-<h3 id="mathisfinitex"><code translate="no" v-pre>math.isfinite(x)</code></h3>
-<p>Return <code translate="no" v-pre>True</code> if <code translate="no" v-pre>x</code> is neither an infinity nor a NaN, and <code translate="no" v-pre>False</code> otherwise.</p>
-<h3 id="mathisinfx"><code translate="no" v-pre>math.isinf(x)</code></h3>
-<p>Return <code translate="no" v-pre>True</code> if <code translate="no" v-pre>x</code> is a positive or negative infinity, and <code translate="no" v-pre>False</code> otherwise.</p>
-<h3 id="mathisnanx"><code translate="no" v-pre>math.isnan(x)</code></h3>
-<p>Return <code translate="no" v-pre>True</code> if <code translate="no" v-pre>x</code> is a NaN (not a number), and <code translate="no" v-pre>False</code> otherwise.</p>
-<h3 id="mathisclosea-b"><code translate="no" v-pre>math.isclose(a, b)</code></h3>
-<p>Return <code translate="no" v-pre>True</code> if the values <code translate="no" v-pre>a</code> and <code translate="no" v-pre>b</code> are close to each other and <code translate="no" v-pre>False</code> otherwise.</p>
-<h3 id="mathexpx"><code translate="no" v-pre>math.exp(x)</code></h3>
-<p>Return <code translate="no" v-pre>e</code> raised to the power of <code translate="no" v-pre>x</code>.</p>
-<h3 id="mathlogx"><code translate="no" v-pre>math.log(x)</code></h3>
-<p>Return the natural logarithm of <code translate="no" v-pre>x</code> (to base <code translate="no" v-pre>e</code>).</p>
-<h3 id="mathlog2x"><code translate="no" v-pre>math.log2(x)</code></h3>
-<p>Return the base-2 logarithm of <code translate="no" v-pre>x</code>. This is usually more accurate than <code translate="no" v-pre>log(x, 2)</code>.</p>
-<h3 id="mathlog10x"><code translate="no" v-pre>math.log10(x)</code></h3>
-<p>Return the base-10 logarithm of <code translate="no" v-pre>x</code>. This is usually more accurate than <code translate="no" v-pre>log(x, 10)</code>.</p>
-<h3 id="mathpowx-y"><code translate="no" v-pre>math.pow(x, y)</code></h3>
-<p>Return <code translate="no" v-pre>x</code> raised to the power <code translate="no" v-pre>y</code>.</p>
-<h3 id="mathsqrtx"><code translate="no" v-pre>math.sqrt(x)</code></h3>
-<p>Return the square root of <code translate="no" v-pre>x</code>.</p>
-<h3 id="mathcbrtx"><code translate="no" v-pre>math.cbrt(x)</code></h3>
-<p>Return the cube root of <code translate="no" v-pre>x</code>. Unlike <code translate="no" v-pre>sqrt</code>, <code translate="no" v-pre>x</code> may be negative.</p>
-<h3 id="mathacosx"><code translate="no" v-pre>math.acos(x)</code></h3>
-<p>Return the arc cosine of <code translate="no" v-pre>x</code>, in radians.</p>
-<h3 id="mathasinx"><code translate="no" v-pre>math.asin(x)</code></h3>
-<p>Return the arc sine of <code translate="no" v-pre>x</code>, in radians.</p>
-<h3 id="mathatanx"><code translate="no" v-pre>math.atan(x)</code></h3>
-<p>Return the arc tangent of <code translate="no" v-pre>x</code>, in radians.</p>
-<h3 id="mathatan2y-x"><code translate="no" v-pre>math.atan2(y, x)</code></h3>
-<p>Return <code translate="no" v-pre>atan(y / x)</code>, in radians. The result is between <code translate="no" v-pre>-pi</code> and <code translate="no" v-pre>pi</code>. The vector in the plane from the origin to point <code translate="no" v-pre>(x, y)</code> makes this angle with the positive X axis. The point of <code translate="no" v-pre>atan2()</code> is that the signs of both inputs are known to it, so it can compute the correct quadrant for the angle. For example, <code translate="no" v-pre>atan(1)</code> and <code translate="no" v-pre>atan2(1, 1)</code> are both <code translate="no" v-pre>pi/4</code>, but <code translate="no" v-pre>atan2(-1, -1)</code> is <code translate="no" v-pre>-3*pi/4</code>.</p>
-<h3 id="mathcosx"><code translate="no" v-pre>math.cos(x)</code></h3>
-<p>Return the cosine of <code translate="no" v-pre>x</code> radians.</p>
-<h3 id="mathsinx"><code translate="no" v-pre>math.sin(x)</code></h3>
-<p>Return the sine of <code translate="no" v-pre>x</code> radians.</p>
-<h3 id="mathtanx"><code translate="no" v-pre>math.tan(x)</code></h3>
-<p>Return the tangent of <code translate="no" v-pre>x</code> radians.</p>
-<h3 id="mathdegreesx"><code translate="no" v-pre>math.degrees(x)</code></h3>
-<p>Convert angle <code translate="no" v-pre>x</code> from radians to degrees.</p>
-<h3 id="mathradiansx"><code translate="no" v-pre>math.radians(x)</code></h3>
-<p>Convert angle <code translate="no" v-pre>x</code> from degrees to radians.</p>
-<h3 id="mathmodfx"><code translate="no" v-pre>math.modf(x)</code></h3>
-<p>Return the fractional and integer parts of <code translate="no" v-pre>x</code>. Both results carry the sign of <code translate="no" v-pre>x</code> and are floats.</p>
-<h3 id="mathcopysignx-y"><code translate="no" v-pre>math.copysign(x, y)</code></h3>
-<p>Return a float with the magnitude (absolute value) of <code translate="no" v-pre>x</code> but the sign of <code translate="no" v-pre>y</code>.</p>
-<h3 id="mathfactorialx"><code translate="no" v-pre>math.factorial(x)</code></h3>
-<p>Return <code translate="no" v-pre>x</code> factorial as an integer.</p>
+<h2 id="differences-from-cpython">Differences from CPython</h2>
+<ul>
+<li>
+<p><code translate="no" v-pre>fsum</code> accepts a list, not an arbitrary iterable, and uses compensated
+summation rather than CPython&#x27;s full algorithm.</p>
+</li>
+<li>
+<p><code translate="no" v-pre>isclose(a, b)</code> checks <code translate="no" v-pre>abs(a - b) &lt; 1e-9</code>. It has no relative or absolute
+tolerance keyword arguments; infinities do not compare close by this rule.</p>
+</li>
+<li>
+<p><code translate="no" v-pre>gcd</code> takes exactly two arguments.</p>
+</li>
+<li>
+<p><code translate="no" v-pre>factorial</code> is limited by signed 64-bit integers. Keep <code translate="no" v-pre>n &lt;= 20</code> for an
+exact representable result.</p>
+</li>
+<li>
+<p>Domain handling follows the implementation&#x27;s math functions and may produce
+NaN or infinity instead of CPython exceptions.</p>
+</li>
+</ul>
+<p>For complex values, use <a href="../cmath/">cmath</a>.
+Implementation: <a href="https://github.com/pocketpy/pocketpy/blob/main/src/modules/math.c">math.c</a>.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -362,6 +394,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "math", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/modules/math.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "math", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/modules/math.md" }</script>
 </body>
 </html>

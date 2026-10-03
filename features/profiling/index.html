@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Profiling | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="Profiling | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="To profile your pocketpy program, you can run main.exe with --profile flag.">
+    <meta name="description" content="The line profiler shows where a script spends execution time. Use it to locate expensive lines, then measure performance again without profiling overhead.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/features/profiling/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/features/profiling/">
     <meta property="og:title" content="Profiling | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="To profile your pocketpy program, you can run main.exe with --profile flag.">
+    <meta property="og:description" content="The line profiler shows where a script spends execution time. Use it to locate expensive lines, then measure performance again without profiling overhead.">
     <meta property="og:image" content="https://pocketpy.github.io/static/profiler_demo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/features/profiling/">
     <meta name="twitter:title" content="Profiling | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="To profile your pocketpy program, you can run main.exe with --profile flag.">
+    <meta name="twitter:description" content="The line profiler shows where a script spends execution time. Use it to locate expensive lines, then measure performance again without profiling overhead.">
     <meta name="twitter:image" content="https://pocketpy.github.io/static/profiler_demo.png">
     <meta name="twitter:image:alt" content="Profiling | Portable Python 3.x Interpreter in Modern C">
 
@@ -44,11 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -79,7 +80,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -103,11 +104,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -168,7 +169,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -192,11 +193,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -232,38 +233,85 @@
 
                 <!-- Page content  -->
 <h1 id="profiling">Profiling</h1>
-<p>To profile your pocketpy program, you can run <code translate="no" v-pre>main.exe</code> with <code translate="no" v-pre>--profile</code> flag.</p>
-<p>For example, to profile <code translate="no" v-pre>test/test_math.py</code>, run</p>
-<div id="profiling-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">main.exe --profile test/test_math.py</code></pre>
+<p>The line profiler shows where a script spends execution time.
+Use it to locate expensive lines, then <a href="../../performance/">measure performance</a>
+again without profiling overhead.</p>
+<h2 id="record-a-report">Record a report</h2>
+<p>Run a script with <code translate="no" v-pre>--profile</code>:</p>
+<div id="record-a-report-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">./build/main --profile app.py</code></pre>
 </doc-codeblock></div>
-<p>This will output a JSON report file named <code translate="no" v-pre>profile_report.json</code> in the current directory,
-which records the time spent for each line. To visualize the report, please install our VSCode extension.</p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=pocketpy.pocketpy">https://marketplace.visualstudio.com/items?itemName=pocketpy.pocketpy</a></p>
+<p>For a Visual Studio build on Windows:</p>
+<div id="record-a-report-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">.\build\Release\main.exe --profile app.py</code></pre>
+</doc-codeblock></div>
+<p>The executable writes <strong><code translate="no" v-pre>profiler_report.json</code></strong> in its current working
+directory. Make sure that directory is writable.
+Do not combine <code translate="no" v-pre>--profile</code> with <code translate="no" v-pre>--debug</code> or <code translate="no" v-pre>--compile</code>; profiling without
+a script filename is ignored in REPL mode.</p>
+<h2 id="view-the-report">View the report</h2>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=pocketpy.pocketpy">pocketpy VS Code extension</a>.
+Open the command palette and run <strong>pocketpy: Load Line Profiler Report</strong>.
+Select the report, then the root folder containing the matching Python sources.
+Press Escape to leave the report view.</p>
+<figure class="content-center">
+    <img src="../../static/profiler_demo.png" alt="Line profiler results in VS Code" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1424" height="734" />
+    <figcaption class="caption">Line profiler results in VS Code</figcaption>
+</figure>
+<p>If annotations appear on the wrong lines, check that the sources match the
+profiled version and that the selected source root is correct.</p>
+<h2 id="profile-execution-in-an-embedded-host">Profile execution in an embedded host</h2>
+<p>Start profiling <strong>before entering Python execution</strong>, then stop it when that
+execution returns. This complete C program prints the report as JSON:</p>
+<div id="profile-execution-in-an-embedded-host-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-c"><code v-pre class="language-c">#include &quot;pocketpy.h&quot;
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    py_initialize();
+    py_StackRef base = py_peek(0);
+
+    py_profiler_reset();
+    py_profiler_begin();
+    bool ok = py_exec(&quot;total = sum([i * i for i in range(1000)])\n&quot;,
+                      &quot;app.py&quot;, EXEC_MODE, NULL);
+    py_profiler_end();
+
+    if(!ok) {
+        py_printexc();
+        py_clearexc(base);
+    }
+    char* report = py_profiler_report();
+    puts(report);
+    py_free(report);
+
+    py_finalize();
+    return ok ? 0 : 1;
+}</code></pre>
+</doc-codeblock></div>
+<p>The C report function returns allocated JSON text. Save it or print it, then
+release it with <code translate="no" v-pre>py_free()</code>. Profiling uses the VM&#x27;s trace callback, so
+coordinate it with debugging and any custom tracing. Reset measurements only
+while profiling is stopped, and pair each begin with an end.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>The VSCode extension requires pocketpy version &gt;= <code translate="no" v-pre>2.1.1</code></p>
+            <h5>Starting from Python</h5>
+<p>The <code translate="no" v-pre>pkpy</code> module also exports profiler controls, but starting profiling from
+an already-running Python frame can crash in this revision. Use <code translate="no" v-pre>--profile</code>
+or the C boundary shown above to ensure that frame tracking starts correctly.</p>
         </div>
     </div>
 </div>
-<p>With pocketpy VSCode extension, press <code translate="no" v-pre>F1</code> and type <code translate="no" v-pre>pocketpy: Load Line Profiler Report</code>,
-select <strong>1. the <code translate="no" v-pre>profile_report.json</code> file; 2. the source root of the program</strong>. Then you will see a nice visualization of the profiling result.</p>
-<figure class="content-center">
-    <img src="../../static/profiler_demo.png" alt="profiler_report" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1424" height="734" />
-    <figcaption class="caption">profiler_report</figcaption>
-</figure>
-<p>Press <code translate="no" v-pre>ESC</code> to exit the report view.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -283,10 +331,10 @@ select <strong>1. the <code translate="no" v-pre>profile_report.json</code> file
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../features/threading/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../modules/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Compute Threads</span>
+                                <span class="block mt-1">Modules</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -330,6 +378,6 @@ select <strong>1. the <code translate="no" v-pre>profile_report.json</code> file
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Profiling", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/features/profiling.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Profiling", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/features/profiling.md" }</script>
 </body>
 </html>

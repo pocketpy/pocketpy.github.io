@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>operator | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="operator | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, operator.add(x, y) is equivalent to the expression x+y.">
+    <meta name="description" content="Function forms of Python operators, useful for callbacks and reductions.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/operator/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/operator/">
     <meta property="og:title" content="operator | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, operator.add(x, y) is equivalent to the expression x+y.">
+    <meta property="og:description" content="Function forms of Python operators, useful for callbacks and reductions.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/operator/">
     <meta name="twitter:title" content="operator | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, operator.add(x, y) is equivalent to the expression x+y.">
+    <meta name="twitter:description" content="Function forms of Python operators, useful for callbacks and reductions.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/operator.md">
@@ -38,11 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -73,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -97,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -162,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -186,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -226,281 +227,79 @@
 
                 <!-- Page content  -->
 <h1 id="operator">operator</h1>
-<p>The operator module exports a set of efficient functions corresponding to the intrinsic operators of Python. For example, <code translate="no" v-pre>operator.add(x, y)</code> is equivalent to the expression <code translate="no" v-pre>x+y</code>. Many function names are those used for special methods, without the double underscores.</p>
-<h2 id="mapping-operators-to-functions">Mapping Operators to Functions</h2>
-<retype-table copy-text="| Operation | Syntax | Function |
-| --- | --- | --- |
-| Ordering | `a &lt;= b` | `le(a, b)` |
-| Ordering | `a &lt; b` | `lt(a, b)` |
-| Ordering | `a &gt;= b` | `ge(a, b)` |
-| Ordering | `a &gt; b` | `gt(a, b)` |
-| Equality | `a == b` | `eq(a, b)` |
-| Equality | `a != b` | `ne(a, b)` |
-| Bitwise AND | `a &amp; b` | `and_(a, b)` |
-| Bitwise OR | `a | b` | `or_(a, b)` |
-| Bitwise XOR | `a ^ b` | `xor(a, b)` |
-| Bitwise Inversion | `~a` | `invert(a)` |
-| Left Shift | `a &lt;&lt; b` | `lshift(a, b)` |
-| Right Shift | `a &gt;&gt; b` | `rshift(a, b)` |
-| Identity | `a is b` | `is_(a, b)` |
-| Identity | `a is not b` | `is_not(a, b)` |
-| Negation (Logical) | `not a` | `not_(a)` |
-| Negation (Arithmetic) | `-a` | `neg(a)` |
-| Truth Test | `bool(a)` | `truth(a)` |
-| Containment Test | `b in a` | `contains(a, b)` |
-| Addition | `a + b` | `add(a, b)` |
-| Subtraction | `a - b` | `sub(a, b)` |
-| Multiplication | `a * b` | `mul(a, b)` |
-| Division | `a / b` | `truediv(a, b)` |
-| Division | `a // b` | `floordiv(a, b)` |
-| Modulo | `a % b` | `mod(a, b)` |
-| Exponentiation | `a ** b` | `pow(a, b)` |
-| Matrix Multiplication | `a @ b` | `matmul(a, b)` |
-| Indexing | `a[b]` | `getitem(a, b)` |
-| Index Assignment | `a[b] = c` | `setitem(a, b, c)` |
-| Index Deletion | `del a[b]` | `delitem(a, b)` |">
+<p>Function forms of Python operators, useful for callbacks and reductions.</p>
+<retype-table copy-text="| Operation | Functions |
+| --- | --- |
+| Comparison | `lt`, `le`, `eq`, `ne`, `ge`, `gt` |
+| Arithmetic | `add`, `sub`, `mul`, `truediv`, `floordiv`, `mod`, `pow`, `matmul`, `neg` |
+| Bitwise | `and_`, `or_`, `xor`, `invert`, `lshift`, `rshift` |
+| Identity/truth | `is_`, `is_not`, `not_`, `truth` |
+| Containers | `contains(container, value)`, `getitem(obj, key)`, `setitem(obj, key, value)`, `delitem(obj, key)` |
+| Accessor factories | `itemgetter(key)`, `attrgetter(name)` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>Operation</th>
-<th>Syntax</th>
-<th>Function</th>
+<th>Functions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Ordering</td>
-<td><code translate="no" v-pre>a &lt;= b</code></td>
-<td><code translate="no" v-pre>le(a, b)</code></td>
+<td>Comparison</td>
+<td><code translate="no" v-pre>lt</code>, <code translate="no" v-pre>le</code>, <code translate="no" v-pre>eq</code>, <code translate="no" v-pre>ne</code>, <code translate="no" v-pre>ge</code>, <code translate="no" v-pre>gt</code></td>
 </tr>
 <tr>
-<td>Ordering</td>
-<td><code translate="no" v-pre>a &lt; b</code></td>
-<td><code translate="no" v-pre>lt(a, b)</code></td>
+<td>Arithmetic</td>
+<td><code translate="no" v-pre>add</code>, <code translate="no" v-pre>sub</code>, <code translate="no" v-pre>mul</code>, <code translate="no" v-pre>truediv</code>, <code translate="no" v-pre>floordiv</code>, <code translate="no" v-pre>mod</code>, <code translate="no" v-pre>pow</code>, <code translate="no" v-pre>matmul</code>, <code translate="no" v-pre>neg</code></td>
 </tr>
 <tr>
-<td>Ordering</td>
-<td><code translate="no" v-pre>a &gt;= b</code></td>
-<td><code translate="no" v-pre>ge(a, b)</code></td>
+<td>Bitwise</td>
+<td><code translate="no" v-pre>and_</code>, <code translate="no" v-pre>or_</code>, <code translate="no" v-pre>xor</code>, <code translate="no" v-pre>invert</code>, <code translate="no" v-pre>lshift</code>, <code translate="no" v-pre>rshift</code></td>
 </tr>
 <tr>
-<td>Ordering</td>
-<td><code translate="no" v-pre>a &gt; b</code></td>
-<td><code translate="no" v-pre>gt(a, b)</code></td>
+<td>Identity/truth</td>
+<td><code translate="no" v-pre>is_</code>, <code translate="no" v-pre>is_not</code>, <code translate="no" v-pre>not_</code>, <code translate="no" v-pre>truth</code></td>
 </tr>
 <tr>
-<td>Equality</td>
-<td><code translate="no" v-pre>a == b</code></td>
-<td><code translate="no" v-pre>eq(a, b)</code></td>
+<td>Containers</td>
+<td><code translate="no" v-pre>contains(container, value)</code>, <code translate="no" v-pre>getitem(obj, key)</code>, <code translate="no" v-pre>setitem(obj, key, value)</code>, <code translate="no" v-pre>delitem(obj, key)</code></td>
 </tr>
 <tr>
-<td>Equality</td>
-<td><code translate="no" v-pre>a != b</code></td>
-<td><code translate="no" v-pre>ne(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise AND</td>
-<td><code translate="no" v-pre>a &amp; b</code></td>
-<td><code translate="no" v-pre>and_(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise OR</td>
-<td><code translate="no" v-pre>a | b</code></td>
-<td><code translate="no" v-pre>or_(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise XOR</td>
-<td><code translate="no" v-pre>a ^ b</code></td>
-<td><code translate="no" v-pre>xor(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise Inversion</td>
-<td><code translate="no" v-pre>~a</code></td>
-<td><code translate="no" v-pre>invert(a)</code></td>
-</tr>
-<tr>
-<td>Left Shift</td>
-<td><code translate="no" v-pre>a &lt;&lt; b</code></td>
-<td><code translate="no" v-pre>lshift(a, b)</code></td>
-</tr>
-<tr>
-<td>Right Shift</td>
-<td><code translate="no" v-pre>a &gt;&gt; b</code></td>
-<td><code translate="no" v-pre>rshift(a, b)</code></td>
-</tr>
-<tr>
-<td>Identity</td>
-<td><code translate="no" v-pre>a is b</code></td>
-<td><code translate="no" v-pre>is_(a, b)</code></td>
-</tr>
-<tr>
-<td>Identity</td>
-<td><code translate="no" v-pre>a is not b</code></td>
-<td><code translate="no" v-pre>is_not(a, b)</code></td>
-</tr>
-<tr>
-<td>Negation (Logical)</td>
-<td><code translate="no" v-pre>not a</code></td>
-<td><code translate="no" v-pre>not_(a)</code></td>
-</tr>
-<tr>
-<td>Negation (Arithmetic)</td>
-<td><code translate="no" v-pre>-a</code></td>
-<td><code translate="no" v-pre>neg(a)</code></td>
-</tr>
-<tr>
-<td>Truth Test</td>
-<td><code translate="no" v-pre>bool(a)</code></td>
-<td><code translate="no" v-pre>truth(a)</code></td>
-</tr>
-<tr>
-<td>Containment Test</td>
-<td><code translate="no" v-pre>b in a</code></td>
-<td><code translate="no" v-pre>contains(a, b)</code></td>
-</tr>
-<tr>
-<td>Addition</td>
-<td><code translate="no" v-pre>a + b</code></td>
-<td><code translate="no" v-pre>add(a, b)</code></td>
-</tr>
-<tr>
-<td>Subtraction</td>
-<td><code translate="no" v-pre>a - b</code></td>
-<td><code translate="no" v-pre>sub(a, b)</code></td>
-</tr>
-<tr>
-<td>Multiplication</td>
-<td><code translate="no" v-pre>a * b</code></td>
-<td><code translate="no" v-pre>mul(a, b)</code></td>
-</tr>
-<tr>
-<td>Division</td>
-<td><code translate="no" v-pre>a / b</code></td>
-<td><code translate="no" v-pre>truediv(a, b)</code></td>
-</tr>
-<tr>
-<td>Division</td>
-<td><code translate="no" v-pre>a // b</code></td>
-<td><code translate="no" v-pre>floordiv(a, b)</code></td>
-</tr>
-<tr>
-<td>Modulo</td>
-<td><code translate="no" v-pre>a % b</code></td>
-<td><code translate="no" v-pre>mod(a, b)</code></td>
-</tr>
-<tr>
-<td>Exponentiation</td>
-<td><code translate="no" v-pre>a ** b</code></td>
-<td><code translate="no" v-pre>pow(a, b)</code></td>
-</tr>
-<tr>
-<td>Matrix Multiplication</td>
-<td><code translate="no" v-pre>a @ b</code></td>
-<td><code translate="no" v-pre>matmul(a, b)</code></td>
-</tr>
-<tr>
-<td>Indexing</td>
-<td><code translate="no" v-pre>a[b]</code></td>
-<td><code translate="no" v-pre>getitem(a, b)</code></td>
-</tr>
-<tr>
-<td>Index Assignment</td>
-<td><code translate="no" v-pre>a[b] = c</code></td>
-<td><code translate="no" v-pre>setitem(a, b, c)</code></td>
-</tr>
-<tr>
-<td>Index Deletion</td>
-<td><code translate="no" v-pre>del a[b]</code></td>
-<td><code translate="no" v-pre>delitem(a, b)</code></td>
+<td>Accessor factories</td>
+<td><code translate="no" v-pre>itemgetter(key)</code>, <code translate="no" v-pre>attrgetter(name)</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </retype-table>
-<h2 id="in-place-operators">In-place Operators</h2>
-<retype-table copy-text="| Operation | Syntax | Function |
-| --- | --- | --- |
-| Addition | `a += b` | `iadd(a, b)` |
-| Subtraction | `a -= b` | `isub(a, b)` |
-| Multiplication | `a *= b` | `imul(a, b)` |
-| Division | `a /= b` | `itruediv(a, b)` |
-| Division | `a //= b` | `ifloordiv(a, b)` |
-| Modulo | `a %= b` | `imod(a, b)` |
-| Bitwise AND | `a &amp;= b` | `iand(a, b)` |
-| Bitwise OR | `a |= b` | `ior(a, b)` |
-| Bitwise XOR | `a ^= b` | `ixor(a, b)` |
-| Left Shift | `a &lt;&lt;= b` | `ilshift(a, b)` |
-| Right Shift | `a &gt;&gt;= b` | `irshift(a, b)` |">
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Operation</th>
-<th>Syntax</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Addition</td>
-<td><code translate="no" v-pre>a += b</code></td>
-<td><code translate="no" v-pre>iadd(a, b)</code></td>
-</tr>
-<tr>
-<td>Subtraction</td>
-<td><code translate="no" v-pre>a -= b</code></td>
-<td><code translate="no" v-pre>isub(a, b)</code></td>
-</tr>
-<tr>
-<td>Multiplication</td>
-<td><code translate="no" v-pre>a *= b</code></td>
-<td><code translate="no" v-pre>imul(a, b)</code></td>
-</tr>
-<tr>
-<td>Division</td>
-<td><code translate="no" v-pre>a /= b</code></td>
-<td><code translate="no" v-pre>itruediv(a, b)</code></td>
-</tr>
-<tr>
-<td>Division</td>
-<td><code translate="no" v-pre>a //= b</code></td>
-<td><code translate="no" v-pre>ifloordiv(a, b)</code></td>
-</tr>
-<tr>
-<td>Modulo</td>
-<td><code translate="no" v-pre>a %= b</code></td>
-<td><code translate="no" v-pre>imod(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise AND</td>
-<td><code translate="no" v-pre>a &amp;= b</code></td>
-<td><code translate="no" v-pre>iand(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise OR</td>
-<td><code translate="no" v-pre>a |= b</code></td>
-<td><code translate="no" v-pre>ior(a, b)</code></td>
-</tr>
-<tr>
-<td>Bitwise XOR</td>
-<td><code translate="no" v-pre>a ^= b</code></td>
-<td><code translate="no" v-pre>ixor(a, b)</code></td>
-</tr>
-<tr>
-<td>Left Shift</td>
-<td><code translate="no" v-pre>a &lt;&lt;= b</code></td>
-<td><code translate="no" v-pre>ilshift(a, b)</code></td>
-</tr>
-<tr>
-<td>Right Shift</td>
-<td><code translate="no" v-pre>a &gt;&gt;= b</code></td>
-<td><code translate="no" v-pre>irshift(a, b)</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</retype-table>
+<p>For binary operators, <code translate="no" v-pre>operator.add(a, b)</code> means <code translate="no" v-pre>a + b</code>, and similarly
+for the other names. <code translate="no" v-pre>contains(a, b)</code> means <code translate="no" v-pre>b in a</code>, so the container
+comes first.</p>
+<div id="operator-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from operator import itemgetter, mul
+from functools import reduce
+
+players = [('Ada', 30), ('Bo', 10), ('Cy', 20)]
+assert sorted(players, key=itemgetter(1)) == [('Bo', 10), ('Cy', 20), ('Ada', 30)]
+assert reduce(mul, [2, 3, 4], 1) == 24</code></pre>
+</doc-codeblock></div>
+<p><code translate="no" v-pre>itemgetter</code> accepts one key and <code translate="no" v-pre>attrgetter</code> accepts one attribute name.
+Multiple keys/names and dotted attribute traversal are not implemented.</p>
+<p>The in-place helpers are <code translate="no" v-pre>iadd</code>, <code translate="no" v-pre>isub</code>, <code translate="no" v-pre>imul</code>, <code translate="no" v-pre>itruediv</code>,
+<code translate="no" v-pre>ifloordiv</code>, <code translate="no" v-pre>imod</code>, <code translate="no" v-pre>iand</code>, <code translate="no" v-pre>ior</code>, <code translate="no" v-pre>ixor</code>, <code translate="no" v-pre>ilshift</code>, and
+<code translate="no" v-pre>irshift</code>. They perform the corresponding augmented assignment and return
+the result. They do not rebind the caller&#x27;s variable:</p>
+<div id="operator-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from operator import iadd
+
+value = 2
+value = iadd(value, 3)
+assert value == 5</code></pre>
+</doc-codeblock></div>
+<p>Custom <code translate="no" v-pre>__iadd__</code>-style hooks remain unsupported; see
+<a href="../../features/differences/">language differences</a>.
+Implementation: <a href="https://github.com/pocketpy/pocketpy/blob/main/python/operator.py">operator.py</a>.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -520,10 +319,10 @@
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../modules/periphery/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../modules/os/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">periphery</span>
+                                <span class="block mt-1">os and io</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -567,6 +366,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "operator", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/modules/operator.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "operator", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/modules/operator.md" }</script>
 </body>
 </html>

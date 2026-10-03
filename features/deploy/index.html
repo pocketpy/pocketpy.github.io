@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Deploy Bytecodes | Portable Python 3.x Interpreter in Modern C</title>
-    <meta name="title" content="Deploy Bytecodes | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="The feature requires pocketpy version >= 2.1.7">
+    <title>Bytecode Deployment | Portable Python 3.x Interpreter in Modern C</title>
+    <meta name="title" content="Bytecode Deployment | Portable Python 3.x Interpreter in Modern C">
+    <meta name="description" content="pocketpy can compile scripts to .pyc files and run them without the original source. This avoids parsing at load time; it does not make the executed bytecode itself faster.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/features/deploy/">
@@ -21,16 +21,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/features/deploy/">
-    <meta property="og:title" content="Deploy Bytecodes | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="The feature requires pocketpy version >= 2.1.7">
+    <meta property="og:title" content="Bytecode Deployment | Portable Python 3.x Interpreter in Modern C">
+    <meta property="og:description" content="pocketpy can compile scripts to .pyc files and run them without the original source. This avoids parsing at load time; it does not make the executed bytecode itself faster.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/features/deploy/">
-    <meta name="twitter:title" content="Deploy Bytecodes | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="The feature requires pocketpy version >= 2.1.7">
+    <meta name="twitter:title" content="Bytecode Deployment | Portable Python 3.x Interpreter in Modern C">
+    <meta name="twitter:description" content="pocketpy can compile scripts to .pyc files and run them without the original source. This avoids parsing at load time; it does not make the executed bytecode itself faster.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/features/deploy.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -226,52 +226,49 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="deploy-bytecodes">Deploy Bytecodes</h1>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>The feature requires pocketpy version &gt;= <code translate="no" v-pre>2.1.7</code></p>
-        </div>
-    </div>
-</div>
-<p>You can deploy your pocketpy program as <code translate="no" v-pre>.pyc</code> files, which are compiled bytecodes with necessary metadata.
-This slightly improves the loading speed of your program.</p>
-<p>It also makes your users unable to get your source code directly, unless they do expensive reverse engineering.</p>
-<p>To compile a <code translate="no" v-pre>.py</code> file into a <code translate="no" v-pre>.pyc</code> bytecode file, you need the command-line executable <code translate="no" v-pre>main</code>,
-which can be simply built by running <code translate="no" v-pre>python cmake_build.py</code> in the repository root.</p>
-<h2 id="example">Example</h2>
-<p>Once you have <code translate="no" v-pre>main</code> executable, you can run the following command to compile <code translate="no" v-pre>input_file.py</code>:</p>
-<div id="example-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">./main --compile input_file.py output_file.pyc</code></pre>
+<h1 id="bytecode-deployment">Bytecode deployment</h1>
+<p>pocketpy can compile scripts to <code translate="no" v-pre>.pyc</code> files and run them without the original
+source. This avoids parsing at load time; it does not make the executed
+bytecode itself faster.</p>
+<p>These files use <strong>pocketpy&#x27;s own format</strong>, not CPython&#x27;s <code translate="no" v-pre>.pyc</code> format.
+Compile and run with the same pocketpy revision and compatible build settings;
+do not assume bytecode compatibility across interpreter updates.</p>
+<h2 id="compile-and-run-a-file">Compile and run a file</h2>
+<p>After <a href="../../quick-start/">building the standalone interpreter</a>:</p>
+<div id="compile-and-run-a-file-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">./build/main --compile hello.py hello.pyc
+./build/main hello.pyc</code></pre>
 </doc-codeblock></div>
-<p>Alternatively, you can invoke the <code translate="no" v-pre>compileall.py</code> script in the repository root.
-It compiles all <code translate="no" v-pre>.py</code> files in the specified directory into <code translate="no" v-pre>.pyc</code> files.</p>
-<div id="example-code-2" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">python compileall.py ./main input_path output_path</code></pre>
+<p>With the Visual Studio generator:</p>
+<div id="compile-and-run-a-file-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">.\build\Release\main.exe --compile hello.py hello.pyc
+.\build\Release\main.exe hello.pyc</code></pre>
 </doc-codeblock></div>
-<h2 id="running-pyc-files">Running <code translate="no" v-pre>.pyc</code> files</h2>
-<p>The command-line executable <code translate="no" v-pre>main</code> can run <code translate="no" v-pre>.pyc</code> files directly:</p>
-<div id="running-pyc-files-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">./main output_file.pyc</code></pre>
+<p>Supply both input and output paths. The <code translate="no" v-pre>--compile</code> option cannot be combined
+with <code translate="no" v-pre>--debug</code> or <code translate="no" v-pre>--profile</code>.</p>
+<h2 id="compile-a-directory">Compile a directory</h2>
+<p>Run the repository&#x27;s <code translate="no" v-pre>compileall.py</code> with a host Python interpreter:</p>
+<div id="compile-a-directory-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">python compileall.py ./build/main scripts dist</code></pre>
 </doc-codeblock></div>
-<p>If you are using C-APIs, you can use the <code translate="no" v-pre>py_execo()</code> function.</p>
-<div id="running-pyc-files-code-2" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-c"><code v-pre class="language-c">/// Run a compiled code object.
-PK_API bool py_execo(const void* data, int size, const char* filename, py_Ref module) PY_RAISE PY_RETURN;</code></pre>
-</doc-codeblock></div>
-<h2 id="trackback-support">Trackback Support</h2>
-<p>Since <code translate="no" v-pre>.pyc</code> files do not contain raw sources,
-trackbacks will show line numbers but not the actual source code lines.</p>
+<p>It recursively compiles <code translate="no" v-pre>scripts/*.py</code>, preserving subdirectories under
+<code translate="no" v-pre>dist/</code>. For example, <code translate="no" v-pre>scripts/game/__init__.py</code> becomes
+<code translate="no" v-pre>dist/game/__init__.pyc</code>. Non-Python assets are not copied.</p>
+<p>Keep the module/package layout when distributing the output.
+The importer tries <code translate="no" v-pre>.py</code> before <code translate="no" v-pre>.pyc</code>, so a source file left beside the
+bytecode takes precedence. See <a href="../../c-api/modules/">module loading</a>.</p>
+<h2 id="run-bytecode-from-an-embedded-host">Run bytecode from an embedded host</h2>
+<p><code translate="no" v-pre>py_execo(data, size, filename, module)</code> accepts a byte buffer and its length.
+Pass <code translate="no" v-pre>NULL</code> as the module to use <code translate="no" v-pre>__main__</code>, and handle its boolean result
+the same way as <code translate="no" v-pre>py_exec()</code>. A custom <code translate="no" v-pre>importfile</code> callback must set the
+byte length when returning compiled modules.</p>
+<h2 id="diagnostics-and-distribution-limits">Diagnostics and distribution limits</h2>
+<p>Tracebacks retain filenames and line numbers, but bytecode does not include
+the original source lines. Keep matching source files during debugging.</p>
+<p>Bytecode is not encryption: constants and program structure remain available
+for inspection. Distribute only code you intend the recipient to run, and
+do not load untrusted bytecode. Keep credentials and other secrets outside
+distributed scripts and bytecode.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -281,11 +278,11 @@ trackbacks will show line numbers but not the actual source code lines.</p>
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../features/differences/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../features/threading/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Comparison with C​Python</span>
+                                <span class="block mt-1">Compute threads</span>
                             </span>
                         </a>
                     </div>
@@ -338,6 +335,6 @@ trackbacks will show line numbers but not the actual source code lines.</p>
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Deploy Bytecodes", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/features/deploy.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Bytecode deployment", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/features/deploy.md" }</script>
 </body>
 </html>

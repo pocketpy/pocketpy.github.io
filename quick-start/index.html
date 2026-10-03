@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Quick Start | Portable Python 3.x Interpreter in Modern C</title>
-    <meta name="title" content="Quick Start | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="You have two options to integrate pkpy into your project.">
+    <title>Quick start | Portable Python 3.x Interpreter in Modern C</title>
+    <meta name="title" content="Quick start | Portable Python 3.x Interpreter in Modern C">
+    <meta name="description" content="Use a C11 compiler and CMake 3.20 or newer. On Windows, use an MSVC environment with C11 atomics support. C++ bindings additionally require C++17.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/quick-start/">
@@ -21,16 +21,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/quick-start/">
-    <meta property="og:title" content="Quick Start | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="You have two options to integrate pkpy into your project.">
+    <meta property="og:title" content="Quick start | Portable Python 3.x Interpreter in Modern C">
+    <meta property="og:description" content="Use a C11 compiler and CMake 3.20 or newer. On Windows, use an MSVC environment with C11 atomics support. C++ bindings additionally require C++17.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/quick-start/">
-    <meta name="twitter:title" content="Quick Start | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="You have two options to integrate pkpy into your project.">
+    <meta name="twitter:title" content="Quick start | Portable Python 3.x Interpreter in Modern C">
+    <meta name="twitter:description" content="Use a C11 compiler and CMake 3.20 or newer. On Windows, use an MSVC environment with C11 atomics support. C++ bindings additionally require C++17.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/quick-start.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/logo.png" />
-    <link href="../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -226,110 +226,132 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="quick-start">Quick Start</h1>
-<p>You have two options to integrate pkpy into your project.</p>
-<h4 id="use-cmake-recommended">Use CMake (Recommended)</h4>
-<p>Clone the whole repository as a submodule into your project,
-In your CMakelists.txt, add the following lines:</p>
-<div id="use-cmake-recommended-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cmake"><code v-pre class="language-cmake">add_subdirectory(pocketpy)
-target_link_libraries(&lt;your_target&gt; pocketpy)</code></pre>
+<h1 id="quick-start">Quick start</h1>
+<p>Use a C11 compiler and CMake 3.20 or newer. On Windows, use an MSVC environment
+with C11 atomics support. C++ bindings additionally require C++17.</p>
+<h2 id="1-build-and-run-the-interpreter">1. Build and run the interpreter</h2>
+<p>From a checkout of the repository:</p>
+<div id="1-build-and-run-the-interpreter-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release</code></pre>
 </doc-codeblock></div>
-<p>See <a href="https://github.com/pocketpy/pocketpy/blob/main/CMakeLists.txt">CMakeLists.txt</a> for details.</p>
-<p>It is safe to use <code translate="no" v-pre>main</code> branch in production if CI badge is green.</p>
-<h4 id="use-the-single-header-file">Use the single header file</h4>
-<p>Download the <code translate="no" v-pre>pocketpy.h</code> and <code translate="no" v-pre>pocketpy.c</code> on our <a href="https://github.com/pocketpy/pocketpy/releases">GitHub Release</a> page.
-And <code translate="no" v-pre>#include</code> it in your project.</p>
-<h3 id="compile-flags">Compile flags</h3>
-<p>To compile it with your project, these flags must be set:</p>
-<ul>
-<li><code translate="no" v-pre>--std=c11</code> flag must be set</li>
-<li>For MSVC, <code translate="no" v-pre>/utf-8</code> and <code translate="no" v-pre>/experimental:c11atomics</code> flag must be set</li>
-<li><code translate="no" v-pre>NDEBUG</code> macro should be defined for release build, or you will get poor performance</li>
-</ul>
-<h3 id="get-prebuilt-binaries">Get prebuilt binaries</h3>
-<p>We have prebuilt binaries,
-check them out on our <a href="https://github.com/pocketpy/pocketpy/actions/workflows/main.yml">GitHub Actions</a>.</p>
-<p>You can download an artifact there which contains the following files.</p>
-<div id="get-prebuilt-binaries-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">├── android
-│   ├── arm64-v8a
-│   │   └── libpocketpy.so
-│   ├── armeabi-v7a
-│   │   └── libpocketpy.so
-│   └── x86_64
-│       └── libpocketpy.so
-├── ios
-│   └── libpocketpy.a
-├── linux
-│   └── x86_64
-│       ├── libpocketpy.so
-│       └── main
-└── windows
-    └── x86_64
-        ├── main.exe
-        └── pocketpy.dll</code></pre>
+<p>Run <code translate="no" v-pre>build/main</code> on a single-configuration build, or
+<code translate="no" v-pre>.\build\Release\main.exe</code> with the Visual Studio generator. Starting it without
+arguments opens the REPL; type <code translate="no" v-pre>exit()</code> to leave. To run a file:</p>
+<div id="1-build-and-run-the-interpreter-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">./build/main hello.py</code></pre>
 </doc-codeblock></div>
-<h3 id="example">Example</h3>
-<div id="example-code-1" class="codeblock-wrapper"><doc-codeblock>
+<p>On Windows:</p>
+<div id="1-build-and-run-the-interpreter-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">.\build\Release\main.exe hello.py</code></pre>
+</doc-codeblock></div>
+<p>Save this as <code translate="no" v-pre>hello.py</code>:</p>
+<div id="1-build-and-run-the-interpreter-code-4" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">print('Hello from pocketpy!')
+print(sum([1, 2, 3]))  # 6</code></pre>
+</doc-codeblock></div>
+<p>When using the default shared-library build, keep the generated library beside
+the executable. Set <code translate="no" v-pre>-DPK_BUILD_STATIC_MAIN=ON</code> to link the interpreter statically.
+For reproducible application builds, select a release tag or a specific commit.</p>
+<h2 id="2-embed-pocketpy-with-cmake">2. Embed pocketpy with CMake</h2>
+<p>Place pocketpy in a <code translate="no" v-pre>pocketpy/</code> subdirectory of your application:</p>
+<div id="2-embed-pocketpy-with-cmake-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">my_app/
+├── CMakeLists.txt
+├── main.c
+└── pocketpy/</code></pre>
+</doc-codeblock></div>
+<p>Use this <code translate="no" v-pre>CMakeLists.txt</code>:</p>
+<div id="2-embed-pocketpy-with-cmake-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-cmake"><code v-pre class="language-cmake">cmake_minimum_required(VERSION 3.20)
+project(my_app LANGUAGES C CXX)
+
+add_subdirectory(pocketpy)
+add_executable(my_app main.c)
+target_compile_features(my_app PRIVATE c_std_11)
+target_link_libraries(my_app PRIVATE pocketpy)
+if(MSVC)
+    target_compile_options(my_app PRIVATE /utf-8 /experimental:c11atomics)
+endif()</code></pre>
+</doc-codeblock></div>
+<p>As a subdirectory, pocketpy builds a static library by default. Its target
+provides the public include path. Build your application with the same
+<code translate="no" v-pre>cmake -S</code> and <code translate="no" v-pre>cmake --build</code> commands used above.</p>
+<p>Save the following complete program as <code translate="no" v-pre>main.c</code>:</p>
+<div id="2-embed-pocketpy-with-cmake-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-c"><code v-pre class="language-c">#include &quot;pocketpy.h&quot;
-#include &lt;stdio.h&gt;
 
-static bool int_add(int argc, py_Ref argv) {
-    PY_CHECK_ARGC(2);
-    PY_CHECK_ARG_TYPE(0, tp_int);
-    PY_CHECK_ARG_TYPE(1, tp_int);
-    py_i64 a = py_toint(py_arg(0));
-    py_i64 b = py_toint(py_arg(1));
-    py_newint(py_retval(), a + b);
-    return true;
-}
-
-int main() {
-    // Initialize pocketpy
+int main(void) {
     py_initialize();
 
-    // Hello world!
-    bool ok = py_exec(&quot;print('Hello world!')&quot;, &quot;&lt;string&gt;&quot;, EXEC_MODE, NULL);
-    if(!ok) goto __ERROR;
-
-    // Create a list: [1, 2, 3]
-    py_Ref r0 = py_tmpr0();
-    py_newlistn(r0, 3);
-    py_newint(py_list_getitem(r0, 0), 1);
-    py_newint(py_list_getitem(r0, 1), 2);
-    py_newint(py_list_getitem(r0, 2), 3);
-
-    // Eval the sum of the list
-    py_Ref f_sum = py_getbuiltin(py_name(&quot;sum&quot;));
-    py_push(f_sum);
-    py_pushnil();
-    py_push(r0);
-    ok = py_vectorcall(1, 0);
-    if(!ok) goto __ERROR;
-
-    printf(&quot;Sum of the list: %d\n&quot;, (int)py_toint(py_retval()));  // 6
-
-    // Bind native `int_add` as a global variable
-    py_newnativefunc(r0, int_add);
-    py_setglobal(py_name(&quot;add&quot;), r0);
-
-    // Call `add` in python
-    ok = py_exec(&quot;add(3, 7)&quot;, &quot;&lt;string&gt;&quot;, EVAL_MODE, NULL);
-    if(!ok) goto __ERROR;
-
-    py_i64 res = py_toint(py_retval());
-    printf(&quot;Sum of 2 variables: %d\n&quot;, (int)res);  // 10
+    bool ok = py_exec(&quot;print('Hello from embedded Python!')&quot;,
+                      &quot;hello.py&quot;, EXEC_MODE, NULL);
+    if(!ok) py_printexc();
 
     py_finalize();
-    return 0;
-
-__ERROR:
-    py_printexc();
-    py_finalize();
-    return 1;
+    return ok ? 0 : 1;
 }</code></pre>
 </doc-codeblock></div>
+<p><code translate="no" v-pre>EXEC_MODE</code> executes statements. The filename appears in tracebacks; <code translate="no" v-pre>NULL</code>
+selects the <code translate="no" v-pre>__main__</code> module. Always check the result of an API that can raise
+an exception. <code translate="no" v-pre>py_finalize()</code> ends the interpreter&#x27;s lifetime; do not call Python
+APIs or initialize it again afterward.</p>
+<p>Next, follow <a href="../bindings/">C bindings</a> to expose a native function, or
+<a href="../bindings-cpp/">C++ bindings</a> to bind a C++ library.</p>
+<h2 id="alternative-the-amalgamated-files">Alternative: the amalgamated files</h2>
+<p>The amalgamated distribution consists of <strong>two files</strong>, <code translate="no" v-pre>pocketpy.h</code> and
+<code translate="no" v-pre>pocketpy.c</code>. Download a matching pair from
+<a href="https://github.com/pocketpy/pocketpy/releases">Releases</a>, or generate them from a
+checkout using a host Python installation:</p>
+<div id="alternative-the-amalgamated-files-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">python amalgamate.py</code></pre>
+</doc-codeblock></div>
+<p>The generated files are placed in <code translate="no" v-pre>amalgamated/</code>. Compile <code translate="no" v-pre>pocketpy.c</code> as C11,
+add its directory to your include path, and link it with your application.
+Include <code translate="no" v-pre>pocketpy.h</code> from application code; compile the <code translate="no" v-pre>.c</code> file only once.</p>
+<p>CMake and amalgamated builds have different feature defaults. See
+<a href="../build/">build configuration</a> for flags, platform libraries, and optional
+modules.</p>
+<h2 id="prebuilt-artifacts">Prebuilt artifacts</h2>
+<p>The <a href="https://github.com/pocketpy/pocketpy/actions/workflows/main.yml">build workflow</a>
+provides artifacts for supported targets. Choose one that matches your OS,
+architecture, and revision. Use headers from the same revision as the binary.</p>
+<h2 id="common-first-run-problems">Common first-run problems</h2>
+<retype-table copy-text="| Symptom | Check |
+| --- | --- |
+| Compiler cannot find `pocketpy.h` | Link the CMake `pocketpy` target, or add the public include directory. |
+| Executable cannot load `pocketpy.dll` | Keep the DLL next to the executable or use a static build. |
+| `ImportError` for a local script | Start in the directory containing your modules; see [module loading](C-API/modules.md). |
+| Release execution is unexpectedly slow | Enable optimization and define `NDEBUG`; see [performance](performance.md). |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compiler cannot find <code translate="no" v-pre>pocketpy.h</code></td>
+<td>Link the CMake <code translate="no" v-pre>pocketpy</code> target, or add the public include directory.</td>
+</tr>
+<tr>
+<td>Executable cannot load <code translate="no" v-pre>pocketpy.dll</code></td>
+<td>Keep the DLL next to the executable or use a static build.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>ImportError</code> for a local script</td>
+<td>Start in the directory containing your modules; see <a href="../c-api/modules/">module loading</a>.</td>
+</tr>
+<tr>
+<td>Release execution is unexpectedly slow</td>
+<td>Enable optimization and define <code translate="no" v-pre>NDEBUG</code>; see <a href="../performance/">performance</a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
 
                 
                 <!-- Required only on API pages -->
@@ -349,10 +371,10 @@ __ERROR:
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../bindings/">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../build/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Write C Bindings</span>
+                                <span class="block mt-1">Build Configuration</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>

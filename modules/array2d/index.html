@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>array2d | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="array2d | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="Efficient general-purpose 2D array.">
+    <meta name="description" content="A rectangular grid for tile maps, images, cellular simulations, and other 2D data. Coordinates are column first, row second: grid[x, y].">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/array2d/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/array2d/">
     <meta property="og:title" content="array2d | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="Efficient general-purpose 2D array.">
+    <meta property="og:description" content="A rectangular grid for tile maps, images, cellular simulations, and other 2D data. Coordinates are column first, row second: grid[x, y].">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/array2d/">
     <meta name="twitter:title" content="array2d | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="Efficient general-purpose 2D array.">
+    <meta name="twitter:description" content="A rectangular grid for tile maps, images, cellular simulations, and other 2D data. Coordinates are column first, row second: grid[x, y].">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/array2d.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -227,174 +227,126 @@
 
                 <!-- Page content  -->
 <h1 id="array2d">array2d</h1>
-<p>Efficient general-purpose 2D array.</p>
-<h4 id="source-code">Source code</h4>
-<div id="source-code-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">from typing import Callable, Literal, overload, Iterator, Self
-from vmath import vec2i, color32
+<p>A rectangular grid for tile maps, images, cellular simulations, and other 2D
+data. Coordinates are <strong>column first, row second</strong>: <code translate="no" v-pre>grid[x, y]</code>.</p>
+<h2 id="create-and-address-a-grid">Create and address a grid</h2>
+<p><code translate="no" v-pre>array2d(width, height, default=None)</code> requires positive dimensions.
+A callable default receives a <code translate="no" v-pre>vmath.vec2i</code> position for each cell.</p>
+<div id="create-and-address-a-grid-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from array2d import array2d
+from vmath import vec2i
 
-Neighborhood = Literal['Moore', 'von Neumann']
+grid = array2d(3, 2, default=0)
+grid[1, 0] = 7
+assert grid.shape == vec2i(3, 2)
+assert grid.numel == 6
+assert grid.tolist() == [[0, 7, 0], [0, 0, 0]]
+assert grid.get(99, 0, -1) == -1
 
-class array2d_like[T]:
-    @property
-    def n_cols(self) -&gt; int: ...
-    @property
-    def n_rows(self) -&gt; int: ...
-    @property
-    def width(self) -&gt; int: ...
-    @property
-    def height(self) -&gt; int: ...
-    @property
-    def shape(self) -&gt; vec2i: ...
-    @property
-    def numel(self) -&gt; int: ...
-
-    @overload
-    def is_valid(self, col: int, row: int) -&gt; bool: ...
-    @overload
-    def is_valid(self, pos: vec2i) -&gt; bool: ...
-
-    def get[R](self, col: int, row: int, default: R = None) -&gt; T | R:
-        &quot;&quot;&quot;Get the value at the given position.
-
-        If the position is out of bounds, returns the default value.
-        &quot;&quot;&quot;
-
-    def index(self, value: T) -&gt; vec2i:
-        &quot;&quot;&quot;Get the position of the first occurrence of the given value.
-
-        Raises `ValueError` if the value is not found.
-        &quot;&quot;&quot;
-
-    def render(self) -&gt; str: ...
-    def render_with_color(self, fg: array2d_like[color32 | None], bg: array2d_like[color32 | None]) -&gt; str: ...
-
-    def all(self: array2d_like[bool]) -&gt; bool: ...
-    def any(self: array2d_like[bool]) -&gt; bool: ...
-
-    def map[R](self, f: Callable[[T], R]) -&gt; array2d[R]: ...
-    def apply(self, f: Callable[[T], T]) -&gt; None: ...
-    def zip_with[R, U](self, other: array2d_like[U], f: Callable[[T, U], R]) -&gt; array2d[R]: ...
-    def copy(self) -&gt; 'array2d[T]': ...
-    def tolist(self) -&gt; list[list[T]]: ...
-
-    def __le__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...
-    def __lt__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...
-    def __ge__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...
-    def __gt__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...
-    def __eq__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...  # type: ignore
-    def __ne__(self, other: T | array2d_like[T]) -&gt; array2d[bool]: ...  # type: ignore
-
-    def __add__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __sub__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __mul__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __truediv__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __floordiv__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __mod__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __pow__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-
-    def __and__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __or__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __xor__(self, other: T | array2d_like[T]) -&gt; array2d[T]: ...
-    def __invert__(self) -&gt; array2d[T]: ...
-
-    def __iter__(self) -&gt; Iterator[tuple[vec2i, T]]: ...
-    def __repr__(self) -&gt; str: ...
-
-    @overload
-    def __getitem__(self, index: vec2i) -&gt; T: ...
-    @overload
-    def __getitem__(self, index: tuple[int, int]) -&gt; T: ...
-    @overload
-    def __getitem__(self, index: tuple[slice, slice]) -&gt; array2d_view[T]: ...
-    @overload
-    def __getitem__(self, index: tuple[slice, int] | tuple[int, slice]) -&gt; array2d_view[T]: ...
-    @overload
-    def __getitem__(self, mask: array2d_like[bool]) -&gt; list[T]: ...
-    @overload
-    def __setitem__(self, index: vec2i, value: T): ...
-    @overload
-    def __setitem__(self, index: tuple[int, int], value: T): ...
-    @overload
-    def __setitem__(self, index: tuple[slice, slice], value: T | 'array2d_like[T]'): ...
-    @overload
-    def __setitem__(self, index: tuple[slice, int] | tuple[int, slice], value: T | 'array2d_like[T]'): ...
-    @overload
-    def __setitem__(self, mask: array2d_like[bool], value: T): ...
-
-    # algorithms
-    def count(self, value: T) -&gt; int:
-        &quot;&quot;&quot;Count the number of cells with the given value.&quot;&quot;&quot;
-
-    def count_neighbors(self, value: T, neighborhood: Neighborhood) -&gt; array2d[int]:
-        &quot;&quot;&quot;Count the number of neighbors with the given value for each cell.&quot;&quot;&quot;
-
-    def get_bounding_rect(self, value: T) -&gt; tuple[int, int, int, int]:
-        &quot;&quot;&quot;Get the bounding rectangle of the given value.
-
-        Returns a tuple `(x, y, width, height)` or raise `ValueError` if the value is not found.
-        &quot;&quot;&quot;
-
-    def convolve(self: array2d_like[int], kernel: array2d_like[int], padding: int) -&gt; array2d[int]:
-        &quot;&quot;&quot;Convolve the array with the given kernel.&quot;&quot;&quot;
-
-    def get_connected_components(self, value: T, neighborhood: Neighborhood) -&gt; tuple[array2d[int], int]:
-        &quot;&quot;&quot;Get connected components of the grid via BFS algorithm.
-
-        Returns the `visited` array and the number of connected components,
-        where `0` means unvisited, and non-zero means the index of the connected component.
-        &quot;&quot;&quot;
-
-
-class array2d_view[T](array2d_like[T]):
-    @property
-    def origin(self) -&gt; vec2i: ...
-
-
-class array2d[T](array2d_like[T]):
-    def __new__(
-            cls,
-            n_cols: int,
-            n_rows: int,
-            default: T | Callable[[vec2i], T] | None = None
-            ): ...
-
-    @staticmethod
-    def fromlist(data: list[list[T]]) -&gt; array2d[T]: ...
-
-
-class chunked_array2d[T, TContext]:
-    def __new__(
-            cls,
-            chunk_size: int,
-            default: T | None = None,
-            auto_add_chunk: bool = True,
-            ): ...
-
-    @property
-    def chunk_size(self) -&gt; int: ...
-
-    def __getitem__(self, index: vec2i) -&gt; T: ...
-    def __setitem__(self, index: vec2i, value: T): ...
-    def __iter__(self) -&gt; Iterator[tuple[vec2i, TContext]]: ...
-    def __len__(self) -&gt; int: ...
-
-    def clear(self) -&gt; None: ...
-    def copy(self) -&gt; Self: ...
-
-    def world_to_chunk(self, world_pos: vec2i) -&gt; tuple[vec2i, vec2i]:
-        &quot;&quot;&quot;Converts world position to chunk position and local position.&quot;&quot;&quot;
-
-    def add_chunk(self, chunk_pos: vec2i, context: TContext | None) -&gt; None: ...
-    def remove_chunk(self, chunk_pos: vec2i) -&gt; bool: ...
-    def move_chunk(self, src_chunk_pos: vec2i, dst_chunk_pos: vec2i) -&gt; bool: ...
-    def get_context(self, chunk_pos: vec2i) -&gt; TContext | None: ...
-
-    def view(self) -&gt; array2d_view[T]: ...
-    def view_rect(self, pos: vec2i, width: int, height: int) -&gt; array2d_view[T]: ...
-    def view_chunk(self, chunk_pos: vec2i) -&gt; array2d_view[T]: ...
-    def view_chunks(self, chunk_pos: vec2i, width: int, height: int) -&gt; array2d_view[T]: ...</code></pre>
+cells = array2d(2, 2, default=lambda pos: [])
+cells[0, 0].append('player')
+assert cells[1, 0] == []</code></pre>
 </doc-codeblock></div>
+<p>A non-callable default is copied by reference into every cell. Use a factory,
+as above, for independent mutable objects.</p>
+<p><code translate="no" v-pre>array2d.fromlist(rows)</code> accepts a nonempty rectangular list of rows.
+<code translate="no" v-pre>width</code>/<code translate="no" v-pre>n_cols</code>, <code translate="no" v-pre>height</code>/<code translate="no" v-pre>n_rows</code>, <code translate="no" v-pre>shape</code>, and <code translate="no" v-pre>numel</code> describe
+the dimensions. Integer cell coordinates must be nonnegative and in bounds.
+Use <code translate="no" v-pre>is_valid(x, y)</code> or <code translate="no" v-pre>get(x, y, default)</code> for boundary-aware access.</p>
+<h2 id="views-copies-and-masks">Views, copies, and masks</h2>
+<p>Slicing creates a view sharing the original grid. Call <code translate="no" v-pre>copy()</code> for a
+separate grid; contained Python objects are still shallow-copied.</p>
+<div id="views-copies-and-masks-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from array2d import array2d
+
+grid = array2d(3, 2, default=0)
+view = grid[1:3, :]
+view[:, :] = 5
+assert grid.tolist() == [[0, 5, 5], [0, 5, 5]]
+
+mask = grid == 5
+assert mask.any()
+assert not mask.all()
+assert grid[mask] == [5, 5, 5, 5]
+grid[mask] = 9
+assert grid.count(9) == 4</code></pre>
+</doc-codeblock></div>
+<p>Comparisons produce boolean grids, not a single boolean.
+Use <code translate="no" v-pre>(a == b).all()</code> for whole-grid equality.
+Arithmetic and bitwise operations accept scalars or compatible grids.</p>
+<h2 id="transform-and-analyze">Transform and analyze</h2>
+<retype-table copy-text="| Method | Use |
+| --- | --- |
+| `map(function)` | Return a new grid of transformed values. |
+| `apply(function)` | Transform cells in place. |
+| `zip_with(other, function)` | Combine two grids cell by cell. |
+| `index(value)`, `count(value)` | Find the first position or count matching cells. |
+| `get_bounding_rect(value)` | `(x, y, width, height)`; raise `ValueError` if absent. |
+| `count_neighbors(value, neighborhood)` | Count matching neighbors of each cell. |
+| `get_connected_components(value, neighborhood)` | Return a label grid and component count; label 0 is unvisited. |
+| `convolve(kernel, padding)` | Integer-grid convolution with a padding value. |
+| `render()`, `render_with_color(fg, bg)` | Produce text for display. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Method</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>map(function)</code></td>
+<td>Return a new grid of transformed values.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>apply(function)</code></td>
+<td>Transform cells in place.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>zip_with(other, function)</code></td>
+<td>Combine two grids cell by cell.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>index(value)</code>, <code translate="no" v-pre>count(value)</code></td>
+<td>Find the first position or count matching cells.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>get_bounding_rect(value)</code></td>
+<td><code translate="no" v-pre>(x, y, width, height)</code>; raise <code translate="no" v-pre>ValueError</code> if absent.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>count_neighbors(value, neighborhood)</code></td>
+<td>Count matching neighbors of each cell.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>get_connected_components(value, neighborhood)</code></td>
+<td>Return a label grid and component count; label 0 is unvisited.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>convolve(kernel, padding)</code></td>
+<td>Integer-grid convolution with a padding value.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>render()</code>, <code translate="no" v-pre>render_with_color(fg, bg)</code></td>
+<td>Produce text for display.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>Neighborhood names are <code translate="no" v-pre>'Moore'</code> (eight neighbors) and <code translate="no" v-pre>'von Neumann'</code>
+(four neighbors). Iteration yields <code translate="no" v-pre>(position, value)</code> pairs.</p>
+<h2 id="chunked-grids">Chunked grids</h2>
+<p><code translate="no" v-pre>chunked_array2d(chunk_size, default=None, auto_add_chunk=True)</code> stores
+chunks addressed with <code translate="no" v-pre>vec2i</code> world coordinates. It provides chunk creation,
+removal, movement, context data, and rectangular/chunk views.
+Use <code translate="no" v-pre>world_to_chunk(position)</code> to obtain the chunk coordinate and local cell
+coordinate.</p>
+<p>The <a href="https://github.com/pocketpy/pocketpy/blob/main/include/typings/array2d.pyi">API declarations</a>
+list the full grid, view, and chunk interfaces.
+<code translate="no" v-pre>array2d</code> is not supported by <a href="../pickle/">pickle</a>; <code translate="no" v-pre>tolist()</code> can provide a
+serializable representation when the cell values support it.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -404,11 +356,11 @@ class chunked_array2d[T, TContext]:
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../c-api/functions/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../modules/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Functions</span>
+                                <span class="block mt-1">Modules</span>
                             </span>
                         </a>
                     </div>

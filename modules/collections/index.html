@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>collections | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="collections | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="Return a dict containing the counts of each element in iterable.">
+    <meta name="description" content="Small container helpers for counting, grouping, and queues.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/collections/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/collections/">
     <meta property="og:title" content="collections | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="Return a dict containing the counts of each element in iterable.">
+    <meta property="og:description" content="Small container helpers for counting, grouping, and queues.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/collections/">
     <meta name="twitter:title" content="collections | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="Return a dict containing the counts of each element in iterable.">
+    <meta name="twitter:description" content="Small container helpers for counting, grouping, and queues.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/collections.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -227,183 +227,77 @@
 
                 <!-- Page content  -->
 <h1 id="collections">collections</h1>
-<h3 id="collectionscounteriterable"><code translate="no" v-pre>collections.Counter(iterable)</code></h3>
-<p>Return a <code translate="no" v-pre>dict</code> containing the counts of each element in <code translate="no" v-pre>iterable</code>.</p>
-<h3 id="collectionsdeque"><code translate="no" v-pre>collections.deque</code></h3>
-<p>A double-ended queue.</p>
-<h3 id="collectionsdefaultdict"><code translate="no" v-pre>collections.defaultdict</code></h3>
-<p>A dictionary that returns a default value when a key is not found.</p>
-<h4 id="source-code">Source code</h4>
-<div id="source-code-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">from typing import TypeVar, Iterable
+<p>Small container helpers for counting, grouping, and queues.</p>
+<h2 id="counter">Counter</h2>
+<p><code translate="no" v-pre>Counter(iterable)</code> returns a <strong>plain dictionary</strong> of occurrence counts,
+rather than a CPython <code translate="no" v-pre>Counter</code> instance. Missing keys raise <code translate="no" v-pre>KeyError</code>;
+use <code translate="no" v-pre>get(key, 0)</code> for a zero default. Methods such as <code translate="no" v-pre>most_common()</code> are
+not provided.</p>
+<div id="counter-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from collections import Counter, defaultdict, deque
 
-def Counter[T](iterable: Iterable[T]):
-    a: dict[T, int] = {}
-    for x in iterable:
-        if x in a:
-            a[x] += 1
-        else:
-            a[x] = 1
-    return a
+counts = Counter('banana')
+assert counts == {'b': 1, 'a': 3, 'n': 2}
+assert counts.get('z', 0) == 0
 
+groups = defaultdict(list)
+groups['fruit'].append('apple')
+assert groups['fruit'] == ['apple']
 
-class defaultdict(dict):
-    def __init__(self, default_factory, *args):
-        super().__init__(*args)
-        self.default_factory = default_factory
-
-    def __missing__(self, key):
-        self[key] = self.default_factory()
-        return self[key]
-
-    def __repr__(self) -&gt; str:
-        return f&quot;defaultdict({self.default_factory}, {super().__repr__()})&quot;
-
-    def copy(self):
-        return defaultdict(self.default_factory, self)
-
-
-class deque[T]:
-    _head: int
-    _tail: int
-    _maxlen: int | None
-    _capacity: int
-    _data: list[T]
-
-    def __init__(self, iterable: Iterable[T] = None, maxlen: int | None = None):
-        if maxlen is not None:
-            assert maxlen &gt; 0
-
-        self._head = 0
-        self._tail = 0
-        self._maxlen = maxlen
-        self._capacity = 8 if maxlen is None else maxlen + 1
-        self._data = [None] * self._capacity # type: ignore
-
-        if iterable is not None:
-            self.extend(iterable)
-
-    @property
-    def maxlen(self) -&gt; int | None:
-        return self._maxlen
-
-    def __resize_2x(self):
-        backup = list(self)
-        self._capacity *= 2
-        self._head = 0
-        self._tail = len(backup)
-        self._data.clear()
-        self._data.extend(backup)
-        self._data.extend([None] * (self._capacity - len(backup)))
-
-    def append(self, x: T):
-        if (self._tail + 1) % self._capacity == self._head:
-            if self._maxlen is None:
-                self.__resize_2x()
-            else:
-                self.popleft()
-        self._data[self._tail] = x
-        self._tail = (self._tail + 1) % self._capacity
-
-    def appendleft(self, x: T):
-        if (self._tail + 1) % self._capacity == self._head:
-            if self._maxlen is None:
-                self.__resize_2x()
-            else:
-                self.pop()
-        self._head = (self._head - 1) % self._capacity
-        self._data[self._head] = x
-
-    def copy(self):
-        return deque(self, maxlen=self.maxlen)
-
-    def count(self, x: T) -&gt; int:
-        n = 0
-        for item in self:
-            if item == x:
-                n += 1
-        return n
-
-    def extend(self, iterable: Iterable[T]):
-        for x in iterable:
-            self.append(x)
-
-    def extendleft(self, iterable: Iterable[T]):
-        for x in iterable:
-            self.appendleft(x)
-
-    def pop(self) -&gt; T:
-        if self._head == self._tail:
-            raise IndexError(&quot;pop from an empty deque&quot;)
-        self._tail = (self._tail - 1) % self._capacity
-        x = self._data[self._tail]
-        self._data[self._tail] = None
-        return x
-
-    def popleft(self) -&gt; T:
-        if self._head == self._tail:
-            raise IndexError(&quot;pop from an empty deque&quot;)
-        x = self._data[self._head]
-        self._data[self._head] = None
-        self._head = (self._head + 1) % self._capacity
-        return x
-
-    def clear(self):
-        i = self._head
-        while i != self._tail:
-            self._data[i] = None # type: ignore
-            i = (i + 1) % self._capacity
-        self._head = 0
-        self._tail = 0
-
-    def rotate(self, n: int = 1):
-        if len(self) == 0:
-            return
-        if n &gt; 0:
-            n = n % len(self)
-            for _ in range(n):
-                self.appendleft(self.pop())
-        elif n &lt; 0:
-            n = -n % len(self)
-            for _ in range(n):
-                self.append(self.popleft())
-
-    def __len__(self) -&gt; int:
-        return (self._tail - self._head) % self._capacity
-
-    def __contains__(self, x: object) -&gt; bool:
-        for item in self:
-            if item == x:
-                return True
-        return False
-
-    def __iter__(self):
-        i = self._head
-        while i != self._tail:
-            yield self._data[i]
-            i = (i + 1) % self._capacity
-
-    def __eq__(self, other: object) -&gt; bool:
-        if not isinstance(other, deque):
-            return NotImplemented
-        if len(self) != len(other):
-            return False
-        for x, y in zip(self, other):
-            if x != y:
-                return False
-        return True
-
-    def __ne__(self, other: object) -&gt; bool:
-        if not isinstance(other, deque):
-            return NotImplemented
-        return not self == other
-
-    def __repr__(self) -&gt; str:
-        if self.maxlen is None:
-            return f&quot;deque({list(self)!r})&quot;
-        return f&quot;deque({list(self)!r}, maxlen={self.maxlen})&quot;
-</code></pre>
+recent = deque([1, 2], maxlen=3)
+recent.append(3)
+recent.append(4)
+assert list(recent) == [2, 3, 4]
+assert recent.popleft() == 2</code></pre>
 </doc-codeblock></div>
+<h2 id="defaultdict">defaultdict</h2>
+<p><code translate="no" v-pre>defaultdict(default_factory, *args)</code> calls the factory with no arguments when
+<code translate="no" v-pre>mapping[key]</code> is missing, stores the result, and returns it.
+Provide a callable factory such as <code translate="no" v-pre>list</code> or <code translate="no" v-pre>int</code>.
+<code translate="no" v-pre>get()</code> does not create an entry. <code translate="no" v-pre>copy()</code> preserves the factory.</p>
+<h2 id="deque">deque</h2>
+<p><code translate="no" v-pre>deque(iterable=None, maxlen=None)</code> is a double-ended queue. A bounded queue
+requires a positive <code translate="no" v-pre>maxlen</code>; appending to a full queue removes an item from
+the opposite end.</p>
+<retype-table copy-text="| Operations | Methods |
+| --- | --- |
+| Add items | `append`, `appendleft`, `extend`, `extendleft` |
+| Remove items | `pop`, `popleft`, `clear` |
+| Inspect/copy | `count`, `copy`, `maxlen`, `len()`, iteration, membership, equality |
+| Rotate | `rotate(n=1)`: positive moves right, negative moves left |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operations</th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add items</td>
+<td><code translate="no" v-pre>append</code>, <code translate="no" v-pre>appendleft</code>, <code translate="no" v-pre>extend</code>, <code translate="no" v-pre>extendleft</code></td>
+</tr>
+<tr>
+<td>Remove items</td>
+<td><code translate="no" v-pre>pop</code>, <code translate="no" v-pre>popleft</code>, <code translate="no" v-pre>clear</code></td>
+</tr>
+<tr>
+<td>Inspect/copy</td>
+<td><code translate="no" v-pre>count</code>, <code translate="no" v-pre>copy</code>, <code translate="no" v-pre>maxlen</code>, <code translate="no" v-pre>len()</code>, iteration, membership, equality</td>
+</tr>
+<tr>
+<td>Rotate</td>
+<td><code translate="no" v-pre>rotate(n=1)</code>: positive moves right, negative moves left</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p><code translate="no" v-pre>extendleft()</code> inserts each element at the left, reversing the input order.
+Popping an empty queue raises <code translate="no" v-pre>IndexError</code>. Indexing and slicing are not
+implemented; convert to a list when needed.</p>
+<p>Implementation: <a href="https://github.com/pocketpy/pocketpy/blob/main/python/collections.py">collections.py</a>.</p>
 
                 
                 <!-- Required only on API pages -->

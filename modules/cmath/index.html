@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>cmath | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="cmath | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="Mathematical functions for complex numbers.">
+    <meta name="description" content="Complex-number arithmetic implemented in Python. Construct values with complex(real, imag=0) or imaginary literals such as 2j.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/cmath/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/cmath/">
     <meta property="og:title" content="cmath | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="Mathematical functions for complex numbers.">
+    <meta property="og:description" content="Complex-number arithmetic implemented in Python. Construct values with complex(real, imag=0) or imaginary literals such as 2j.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/cmath/">
     <meta name="twitter:title" content="cmath | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="Mathematical functions for complex numbers.">
+    <meta name="twitter:description" content="Complex-number arithmetic implemented in Python. Construct values with complex(real, imag=0) or imaginary literals such as 2j.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/cmath.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -227,198 +227,69 @@
 
                 <!-- Page content  -->
 <h1 id="cmath">cmath</h1>
-<p>Mathematical functions for complex numbers.</p>
-<p><a href="https://docs.python.org/3/library/cmath.html">https://docs.python.org/3/library/cmath.html</a></p>
-<h4 id="source-code">Source code</h4>
-<div id="source-code-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">import math
+<p>Complex-number arithmetic implemented in Python. Construct values with
+<code translate="no" v-pre>complex(real, imag=0)</code> or imaginary literals such as <code translate="no" v-pre>2j</code>.</p>
+<div id="cmath-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">import cmath
 
-class complex:
-    def __init__(self, real, imag=0):
-        self._real = float(real)
-        self._imag = float(imag)
-
-    @property
-    def real(self):
-        return self._real
-
-    @property
-    def imag(self):
-        return self._imag
-
-    def conjugate(self):
-        return complex(self.real, -self.imag)
-
-    def __repr__(self):
-        s = ['(', str(self.real)]
-        s.append('-' if self.imag &lt; 0 else '+')
-        s.append(str(abs(self.imag)))
-        s.append('j)')
-        return ''.join(s)
-
-    def __eq__(self, other):
-        if type(other) is complex:
-            return self.real == other.real and self.imag == other.imag
-        if type(other) in (int, float):
-            return self.real == other and self.imag == 0
-        return NotImplemented
-
-    def __ne__(self, other):
-        res = self == other
-        if res is NotImplemented:
-            return res
-        return not res
-
-    def __add__(self, other):
-        if type(other) is complex:
-            return complex(self.real + other.real, self.imag + other.imag)
-        if type(other) in (int, float):
-            return complex(self.real + other, self.imag)
-        return NotImplemented
-
-    def __radd__(self, other):
-        return self.__add__(other)
-
-    def __sub__(self, other):
-        if type(other) is complex:
-            return complex(self.real - other.real, self.imag - other.imag)
-        if type(other) in (int, float):
-            return complex(self.real - other, self.imag)
-        return NotImplemented
-
-    def __rsub__(self, other):
-        if type(other) is complex:
-            return complex(other.real - self.real, other.imag - self.imag)
-        if type(other) in (int, float):
-            return complex(other - self.real, -self.imag)
-        return NotImplemented
-
-    def __mul__(self, other):
-        if type(other) is complex:
-            return complex(self.real * other.real - self.imag * other.imag,
-                           self.real * other.imag + self.imag * other.real)
-        if type(other) in (int, float):
-            return complex(self.real * other, self.imag * other)
-        return NotImplemented
-
-    def __rmul__(self, other):
-        return self.__mul__(other)
-
-    def __truediv__(self, other):
-        if type(other) is complex:
-            denominator = other.real ** 2 + other.imag ** 2
-            real_part = (self.real * other.real + self.imag * other.imag) / denominator
-            imag_part = (self.imag * other.real - self.real * other.imag) / denominator
-            return complex(real_part, imag_part)
-        if type(other) in (int, float):
-            return complex(self.real / other, self.imag / other)
-        return NotImplemented
-
-    def __pow__(self, other: int | float):
-        if type(other) in (int, float):
-            return complex(self.__abs__() ** other * math.cos(other * phase(self)),
-                           self.__abs__() ** other * math.sin(other * phase(self)))
-        return NotImplemented
-
-    def __abs__(self) -&gt; float:
-        return math.sqrt(self.real ** 2 + self.imag ** 2)
-
-    def __neg__(self):
-        return complex(-self.real, -self.imag)
-
-    def __hash__(self):
-        return hash((self.real, self.imag))
-
-
-# Conversions to and from polar coordinates
-
-def phase(z: complex):
-    return math.atan2(z.imag, z.real)
-
-def polar(z: complex):
-    return z.__abs__(), phase(z)
-
-def rect(r: float, phi: float):
-    return r * math.cos(phi) + r * math.sin(phi) * 1j
-
-# Power and logarithmic functions
-
-def exp(z: complex):
-    return math.exp(z.real) * rect(1, z.imag)
-
-def log(z: complex, base=2.718281828459045):
-    return math.log(z.__abs__(), base) + phase(z) * 1j
-
-def log10(z: complex):
-    return log(z, 10)
-
-def sqrt(z: complex):
-    return z ** 0.5
-
-# Trigonometric functions
-
-def acos(z: complex):
-    return -1j * log(z + sqrt(z * z - 1))
-
-def asin(z: complex):
-    return -1j * log(1j * z + sqrt(1 - z * z))
-
-def atan(z: complex):
-    return 1j / 2 * log((1 - 1j * z) / (1 + 1j * z))
-
-def cos(z: complex):
-    return (exp(1j * z) + exp(-1j * z)) / 2
-
-def sin(z: complex):
-    return (exp(1j * z) - exp(-1j * z)) / (2 * 1j)
-
-def tan(z: complex):
-    return sin(z) / cos(z)
-
-# Hyperbolic functions
-
-def acosh(z: complex):
-    return log(z + sqrt(z * z - 1))
-
-def asinh(z: complex):
-    return log(z + sqrt(z * z + 1))
-
-def atanh(z: complex):
-    return 1 / 2 * log((1 + z) / (1 - z))
-
-def cosh(z: complex):
-    return (exp(z) + exp(-z)) / 2
-
-def sinh(z: complex):
-    return (exp(z) - exp(-z)) / 2
-
-def tanh(z: complex):
-    return sinh(z) / cosh(z)
-
-# Classification functions
-
-def isfinite(z: complex):
-    return math.isfinite(z.real) and math.isfinite(z.imag)
-
-def isinf(z: complex):
-    return math.isinf(z.real) or math.isinf(z.imag)
-
-def isnan(z: complex):
-    return math.isnan(z.real) or math.isnan(z.imag)
-
-def isclose(a: complex, b: complex):
-    return math.isclose(a.real, b.real) and math.isclose(a.imag, b.imag)
-
-# Constants
-
-pi = math.pi
-e = math.e
-tau = 2 * pi
-inf = math.inf
-infj = complex(0, inf)
-nan = math.nan
-nanj = complex(0, nan)</code></pre>
+value = complex(3, 4)
+assert value.real == 3.0
+assert value.imag == 4.0
+assert value.conjugate() == complex(3, -4)
+assert cmath.isclose(cmath.sqrt(complex(-1, 0)), complex(0, 1))
+radius, angle = cmath.polar(value)
+assert cmath.isclose(cmath.rect(radius, angle), value)</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| Group | Members |
+| --- | --- |
+| Coordinates | `phase(z)`, `polar(z)`, `rect(radius, angle)` |
+| Powers/logarithms | `exp(z)`, `log(z, base=e)`, `log10(z)`, `sqrt(z)` |
+| Trigonometry | `sin`, `cos`, `tan`, `asin`, `acos`, `atan` |
+| Hyperbolic functions | `sinh`, `cosh`, `tanh`, `asinh`, `acosh`, `atanh` |
+| Classification | `isfinite(z)`, `isinf(z)`, `isnan(z)`, `isclose(a, b)` |
+| Constants | `pi`, `e`, `tau`, `inf`, `infj`, `nan`, `nanj` |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Group</th>
+<th>Members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coordinates</td>
+<td><code translate="no" v-pre>phase(z)</code>, <code translate="no" v-pre>polar(z)</code>, <code translate="no" v-pre>rect(radius, angle)</code></td>
+</tr>
+<tr>
+<td>Powers/logarithms</td>
+<td><code translate="no" v-pre>exp(z)</code>, <code translate="no" v-pre>log(z, base=e)</code>, <code translate="no" v-pre>log10(z)</code>, <code translate="no" v-pre>sqrt(z)</code></td>
+</tr>
+<tr>
+<td>Trigonometry</td>
+<td><code translate="no" v-pre>sin</code>, <code translate="no" v-pre>cos</code>, <code translate="no" v-pre>tan</code>, <code translate="no" v-pre>asin</code>, <code translate="no" v-pre>acos</code>, <code translate="no" v-pre>atan</code></td>
+</tr>
+<tr>
+<td>Hyperbolic functions</td>
+<td><code translate="no" v-pre>sinh</code>, <code translate="no" v-pre>cosh</code>, <code translate="no" v-pre>tanh</code>, <code translate="no" v-pre>asinh</code>, <code translate="no" v-pre>acosh</code>, <code translate="no" v-pre>atanh</code></td>
+</tr>
+<tr>
+<td>Classification</td>
+<td><code translate="no" v-pre>isfinite(z)</code>, <code translate="no" v-pre>isinf(z)</code>, <code translate="no" v-pre>isnan(z)</code>, <code translate="no" v-pre>isclose(a, b)</code></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td><code translate="no" v-pre>pi</code>, <code translate="no" v-pre>e</code>, <code translate="no" v-pre>tau</code>, <code translate="no" v-pre>inf</code>, <code translate="no" v-pre>infj</code>, <code translate="no" v-pre>nan</code>, <code translate="no" v-pre>nanj</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>Pass complex values explicitly to functions that access <code translate="no" v-pre>real</code> and <code translate="no" v-pre>imag</code>.
+<code translate="no" v-pre>isclose</code> checks the real and imaginary parts with <a href="../math/">math.isclose</a>;
+it does not accept CPython&#x27;s tolerance keywords. Do not assume identical
+branch-cut or domain-error behavior for all inputs.</p>
+<p>Implementation: <a href="https://github.com/pocketpy/pocketpy/blob/main/python/cmath.py">cmath.py</a>.</p>
 
                 
                 <!-- Required only on API pages -->

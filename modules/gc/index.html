@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>gc | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="gc | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="Garbage collection interface module.">
+    <meta name="description" content="Control the current VM's tracing garbage collector.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/gc/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/gc/">
     <meta property="og:title" content="gc | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="Garbage collection interface module.">
+    <meta property="og:description" content="Control the current VM's tracing garbage collector.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/gc/">
     <meta name="twitter:title" content="gc | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="Garbage collection interface module.">
+    <meta name="twitter:description" content="Control the current VM's tracing garbage collector.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/gc.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -227,50 +227,74 @@
 
                 <!-- Page content  -->
 <h1 id="gc">gc</h1>
-<p>Garbage collection interface module.</p>
-<h4 id="source-code">Source code</h4>
-<div id="source-code-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">from typing import Callable, Literal
+<p>Control the current VM&#x27;s tracing garbage collector.</p>
+<retype-table copy-text="| Function | Behavior |
+| --- | --- |
+| `isenabled()` | Whether automatic collection is enabled. |
+| `enable()`, `disable()` | Enable/disable automatic collection. |
+| `collect()` | Run a full collection now and return the number of reclaimed objects. |
+| `collect_hint()` | Collect if the allocation threshold calls for it; return the reclaimed count. |
+| `setup_debug_callback(callback)` | Register collection diagnostics; pass `None` to remove the callback. |
+| `is_tracked(obj)`, `track(obj)`, `untrack(obj)` | Inspect or change whether the collector traverses an object's references. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Function</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>isenabled()</code></td>
+<td>Whether automatic collection is enabled.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>enable()</code>, <code translate="no" v-pre>disable()</code></td>
+<td>Enable/disable automatic collection.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>collect()</code></td>
+<td>Run a full collection now and return the number of reclaimed objects.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>collect_hint()</code></td>
+<td>Collect if the allocation threshold calls for it; return the reclaimed count.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>setup_debug_callback(callback)</code></td>
+<td>Register collection diagnostics; pass <code translate="no" v-pre>None</code> to remove the callback.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>is_tracked(obj)</code>, <code translate="no" v-pre>track(obj)</code>, <code translate="no" v-pre>untrack(obj)</code></td>
+<td>Inspect or change whether the collector traverses an object&#x27;s references.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<div id="gc-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">import gc
 
-def isenabled() -&gt; bool:
-    &quot;&quot;&quot;Check if automatic garbage collection is enabled.&quot;&quot;&quot;
-
-def enable() -&gt; None:
-    &quot;&quot;&quot;Enable automatic garbage collection.&quot;&quot;&quot;
-
-def disable() -&gt; None:
-    &quot;&quot;&quot;Disable automatic garbage collection.&quot;&quot;&quot;
-
-def collect() -&gt; int:
-    &quot;&quot;&quot;Run a full collection immediately.
-
-    Returns an integer indicating the number of unreachable objects found.
-    &quot;&quot;&quot;
-
-def collect_hint() -&gt; int:
-    &quot;&quot;&quot;Hint the garbage collector to run a collection.
-
-    The typical usage scenario for this function is in frame-driven games,
-    where `gc.disable()` is called at the start of the game,
-    and `gc.collect_hint()` is called at the end of each frame.
-    &quot;&quot;&quot;
-
-def setup_debug_callback(cb: Callable[[Literal['start', 'stop'], str], None] | None) -&gt; None:
-    &quot;&quot;&quot;Setup a callback that will be triggered at the end of each collection.&quot;&quot;&quot;
-
-def is_tracked(obj: object) -&gt; bool:
-    &quot;&quot;&quot;Return true if the object is tracked recursively.&quot;&quot;&quot;
-
-def track(obj: object) -&gt; None:
-    &quot;&quot;&quot;Start tracking this object recursively.&quot;&quot;&quot;
-
-def untrack(obj: object) -&gt; None:
-    &quot;&quot;&quot;Stop tracking this object recursively.
-
-    This improves performance for container objects with value types like `list[int]`.
-    &quot;&quot;&quot;
-</code></pre>
+cycle = []
+cycle.append(cycle)
+del cycle
+reclaimed = gc.collect()
+assert type(reclaimed) is int
+assert reclaimed &gt;= 1</code></pre>
 </doc-codeblock></div>
+<p>Disabling automatic collection does not stop allocation or prevent explicit
+<code translate="no" v-pre>collect()</code>/<code translate="no" v-pre>collect_hint()</code> calls. A frame-driven application can disable
+automatic collection, call <code translate="no" v-pre>collect_hint()</code> at an appropriate frame boundary,
+and re-enable it when leaving that mode. Memory may grow between collections;
+measure the effect before adopting this policy.</p>
+<p><code translate="no" v-pre>untrack()</code> is an advanced optimization for containers whose contents do not
+need tracing, such as a list containing only integer values. If an untracked
+container later contains GC-managed objects, its children can be reclaimed
+while still in use. Track it again before storing such values.</p>
+<p>Native code must also keep references visible to the collector; see
+<a href="../../c-api/introduction/">C API lifetimes</a>.
+Full declarations: <a href="https://github.com/pocketpy/pocketpy/blob/main/include/typings/gc.pyi">gc.pyi</a>.</p>
 
                 
                 <!-- Required only on API pages -->

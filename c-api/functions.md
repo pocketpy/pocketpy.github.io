@@ -139,7 +139,7 @@ PK_API void py_Frame_newlocals(py_Frame* frame, py_OutRef out);
 PK_API py_StackRef py_Frame_function(py_Frame* frame);
 ```
 
-### py_compile [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_compile [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Compile a source string into a code object.
 /// Use python's `exec()` or `eval()` to execute it.
@@ -149,20 +149,20 @@ PK_API bool py_compile(const char* source,
                        bool is_dynamic);
 ```
 
-### py_compilefile [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_compilefile [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Compile a `.py` file into a `.pyc` file.
 PK_API bool py_compilefile(const char* src_path,
                            const char* dst_path);
 ```
 
-### py_execo [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_execo [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Run a compiled code object.
 PK_API bool py_execo(const void* data, int size, const char* filename, py_Ref module);
 ```
 
-### py_exec [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_exec [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Run a source string.
 /// @param source source string.
@@ -176,13 +176,13 @@ PK_API bool py_exec(const char* source,
                     py_Ref module);
 ```
 
-### py_eval [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_eval [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Evaluate a source string. Equivalent to `py_exec(source, "<string>", EVAL_MODE, module)`.
 PK_API bool py_eval(const char* source, py_Ref module);
 ```
 
-### py_smartexec [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_smartexec [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Run a source string with smart interpretation.
 /// Example:
@@ -193,7 +193,7 @@ PK_API bool py_eval(const char* source, py_Ref module);
 PK_API bool py_smartexec(const char* source, py_Ref module, ...);
 ```
 
-### py_smarteval [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_smarteval [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Evaluate a source string with smart interpretation.
 /// Example:
@@ -407,7 +407,7 @@ PK_API void* py_totrivial(py_Ref);
 PK_API py_f64 py_tofloat(py_Ref);
 ```
 
-### py_castfloat [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_castfloat [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Cast a `int` or `float` object in python to `double`.
 /// If successful, return true and set the value to `out`.
@@ -415,13 +415,13 @@ PK_API py_f64 py_tofloat(py_Ref);
 PK_API bool py_castfloat(py_Ref, py_f64* out);
 ```
 
-### py_castfloat32 [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_castfloat32 [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// 32-bit version of `py_castfloat`.
 PK_API bool py_castfloat32(py_Ref, float* out);
 ```
 
-### py_castint [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_castint [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Cast a `int` object in python to `int64_t`.
 PK_API bool py_castint(py_Ref, py_i64* out);
@@ -498,14 +498,14 @@ PK_API bool py_issubclass(py_Type derived, py_Type base);
 PK_API py_Type py_gettype(const char* module, py_Name name);
 ```
 
-### py_checktype [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_checktype [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Check if the object is an instance of the given type exactly.
 /// Raise `TypeError` if the check fails.
 PK_API bool py_checktype(py_Ref self, py_Type type);
 ```
 
-### py_checkinstance [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_checkinstance [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Check if the object is an instance of the given type or its subclass.
 /// Raise `TypeError` if the check fails.
@@ -635,7 +635,7 @@ PK_API bool py_deldict(py_Ref self, py_Name name);
 PK_API py_ItemRef py_emplacedict(py_Ref self, py_Name name);
 ```
 
-### py_applydict [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_applydict [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Apply a function to all items in the object's `__dict__`.
 /// Return `true` if the function is successful for all items.
@@ -738,14 +738,14 @@ PK_API py_StackRef py_pushtmp();
 PK_API bool py_pushmethod(py_Name name);
 ```
 
-### py_pusheval [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_pusheval [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Evaluate an expression and push the result to the stack.
 /// This function is used for testing.
 PK_API bool py_pusheval(const char* expr, py_GlobalRef module);
 ```
 
-### py_vectorcall [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_vectorcall [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Call a callable object via pocketpy's calling convention.
 /// You need to prepare the stack using the following format:
@@ -757,7 +757,7 @@ PK_API bool py_pusheval(const char* expr, py_GlobalRef module);
 PK_API bool py_vectorcall(uint16_t argc, uint16_t kwargc);
 ```
 
-### py_call [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_call [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Call a function.
 /// It prepares the stack and then performs a `vectorcall(argc, 0, false)`.
@@ -766,20 +766,20 @@ PK_API bool py_vectorcall(uint16_t argc, uint16_t kwargc);
 PK_API bool py_call(py_Ref f, int argc, py_Ref argv);
 ```
 
-### py_tpcall [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_tpcall [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Call a type to create a new instance.
 PK_API bool py_tpcall(py_Type type, int argc, py_Ref argv);
 ```
 
-### py_callcfunc [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_callcfunc [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Call a `py_CFunction` in a safe way.
 /// This function does extra checks to help you debug `py_CFunction`.
 PK_API bool py_callcfunc(py_CFunction f, int argc, py_Ref argv);
 ```
 
-### py_binaryop [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryop [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Perform a binary operation.
 /// The result will be set to `py_retval()`.
@@ -787,115 +787,115 @@ PK_API bool py_callcfunc(py_CFunction f, int argc, py_Ref argv);
 PK_API bool py_binaryop(py_Ref lhs, py_Ref rhs, py_Name op, py_Name rop);
 ```
 
-### py_binaryadd [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryadd [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs + rhs
 PK_API bool py_binaryadd(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarysub [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarysub [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs - rhs
 PK_API bool py_binarysub(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarymul [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarymul [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs * rhs
 PK_API bool py_binarymul(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarytruediv [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarytruediv [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs / rhs
 PK_API bool py_binarytruediv(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binaryfloordiv [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryfloordiv [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs // rhs
 PK_API bool py_binaryfloordiv(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarymod [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarymod [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs % rhs
 PK_API bool py_binarymod(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarypow [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarypow [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs ** rhs
 PK_API bool py_binarypow(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarylshift [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarylshift [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs << rhs
 PK_API bool py_binarylshift(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binaryrshift [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryrshift [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs >> rhs
 PK_API bool py_binaryrshift(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binaryand [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryand [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs & rhs
 PK_API bool py_binaryand(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binaryor [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryor [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs | rhs
 PK_API bool py_binaryor(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binaryxor [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binaryxor [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs ^ rhs
 PK_API bool py_binaryxor(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_binarymatmul [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_binarymatmul [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs @ rhs
 PK_API bool py_binarymatmul(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_eq [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_eq [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs == rhs
 PK_API bool py_eq(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_ne [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_ne [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs != rhs
 PK_API bool py_ne(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_lt [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_lt [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs < rhs
 PK_API bool py_lt(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_le [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_le [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs <= rhs
 PK_API bool py_le(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_gt [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_gt [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs > rhs
 PK_API bool py_gt(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_ge [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_ge [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// lhs >= rhs
 PK_API bool py_ge(py_Ref lhs, py_Ref rhs);
@@ -907,21 +907,21 @@ PK_API bool py_ge(py_Ref lhs, py_Ref rhs);
 PK_API bool py_isidentical(py_Ref, py_Ref);
 ```
 
-### py_bool [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_bool [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Python equivalent to `bool(val)`.
 /// 1: true, 0: false, -1: error
 PK_API int py_bool(py_Ref val);
 ```
 
-### py_equal [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_equal [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Compare two objects.
 /// 1: lhs == rhs, 0: lhs != rhs, -1: error
 PK_API int py_equal(py_Ref lhs, py_Ref rhs);
 ```
 
-### py_less [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_less [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Compare two objects.
 /// 1: lhs < rhs, 0: lhs >= rhs, -1: error
@@ -934,19 +934,19 @@ PK_API int py_less(py_Ref lhs, py_Ref rhs);
 PK_API bool py_callable(py_Ref val);
 ```
 
-### py_hash [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_hash [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Get the hash value of the object.
 PK_API bool py_hash(py_Ref, py_i64* out);
 ```
 
-### py_iter [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_iter [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Get the iterator of the object.
 PK_API bool py_iter(py_Ref);
 ```
 
-### py_next [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_next [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Get the next element from the iterator.
 /// 1: a value was produced into `py_retval()`
@@ -956,55 +956,55 @@ PK_API bool py_iter(py_Ref);
 PK_API int py_next(py_Ref);
 ```
 
-### py_str [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_str [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `str(val)`.
 PK_API bool py_str(py_Ref val);
 ```
 
-### py_repr [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_repr [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `repr(val)`.
 PK_API bool py_repr(py_Ref val);
 ```
 
-### py_len [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_len [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `len(val)`.
 PK_API bool py_len(py_Ref val);
 ```
 
-### py_getattr [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_getattr [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `getattr(self, name)`.
 PK_API bool py_getattr(py_Ref self, py_Name name);
 ```
 
-### py_setattr [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_setattr [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Python equivalent to `setattr(self, name, val)`.
 PK_API bool py_setattr(py_Ref self, py_Name name, py_Ref val);
 ```
 
-### py_delattr [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_delattr [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Python equivalent to `delattr(self, name)`.
 PK_API bool py_delattr(py_Ref self, py_Name name);
 ```
 
-### py_getitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_getitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `self[key]`.
 PK_API bool py_getitem(py_Ref self, py_Ref key);
 ```
 
-### py_setitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_setitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Python equivalent to `self[key] = val`.
 PK_API bool py_setitem(py_Ref self, py_Ref key, py_Ref val);
 ```
 
-### py_delitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_delitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Python equivalent to `del self[key]`.
 PK_API bool py_delitem(py_Ref self, py_Ref key);
@@ -1022,13 +1022,13 @@ PK_API py_GlobalRef py_getmodule(const char* path);
 PK_API py_GlobalRef py_newmodule(const char* path);
 ```
 
-### py_importlib_reload [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_importlib_reload [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Reload an existing module.
 PK_API bool py_importlib_reload(py_Ref module);
 ```
 
-### py_import [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_import [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Import a module.
 /// The result will be set to `py_retval()`.
@@ -1042,7 +1042,7 @@ PK_API int py_import(const char* path);
 PK_API bool py_checkexc();
 ```
 
-### py_matchexc [!badge text="return"](../introduction/#py_return-macro)
+### py_matchexc [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Check if the unhandled exception is an instance of the given type.
 /// If match, the exception will be stored in `py_retval()`.
@@ -1069,25 +1069,25 @@ PK_API void py_printexc();
 PK_API char* py_formatexc();
 ```
 
-### py_exception [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_exception [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Raise an exception by type and message. Always return false.
 PK_API bool py_exception(py_Type type, const char* fmt, ...);
 ```
 
-### py_raise [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_raise [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// Raise an exception object. Always return false.
 PK_API bool py_raise(py_Ref);
 ```
 
-### KeyError [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### KeyError [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 
 PK_API bool KeyError(py_Ref key);
 ```
 
-### StopIteration [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### StopIteration [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 
 PK_API bool StopIteration();
@@ -1203,61 +1203,61 @@ PK_API void py_list_insert(py_Ref self, int i, py_Ref val);
 PK_API void py_newdict(py_OutRef);
 ```
 
-### py_dict_getitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_dict_getitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// -1: error, 0: not found, 1: found
 PK_API int py_dict_getitem(py_Ref self, py_Ref key);
 ```
 
-### py_dict_setitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_setitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// true: success, false: error
 PK_API bool py_dict_setitem(py_Ref self, py_Ref key, py_Ref val);
 ```
 
-### py_dict_delitem [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_delitem [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// -1: error, 0: not found, 1: found (and deleted)
 PK_API int py_dict_delitem(py_Ref self, py_Ref key);
 ```
 
-### py_dict_getitem_by_str [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_dict_getitem_by_str [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// -1: error, 0: not found, 1: found
 PK_API int py_dict_getitem_by_str(py_Ref self, const char* key);
 ```
 
-### py_dict_getitem_by_int [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_dict_getitem_by_int [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// -1: error, 0: not found, 1: found
 PK_API int py_dict_getitem_by_int(py_Ref self, py_i64 key);
 ```
 
-### py_dict_setitem_by_str [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_setitem_by_str [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// true: success, false: error
 PK_API bool py_dict_setitem_by_str(py_Ref self, const char* key, py_Ref val);
 ```
 
-### py_dict_setitem_by_int [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_setitem_by_int [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// true: success, false: error
 PK_API bool py_dict_setitem_by_int(py_Ref self, py_i64 key, py_Ref val);
 ```
 
-### py_dict_delitem_by_str [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_delitem_by_str [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// -1: error, 0: not found, 1: found (and deleted)
 PK_API int py_dict_delitem_by_str(py_Ref self, const char* key);
 ```
 
-### py_dict_delitem_by_int [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_delitem_by_int [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// -1: error, 0: not found, 1: found (and deleted)
 PK_API int py_dict_delitem_by_int(py_Ref self, py_i64 key);
 ```
 
-### py_dict_apply [!badge text="raise" variant="danger"](../introduction/#py_raise-macro)
+### py_dict_apply [!badge text="raise" variant="danger"](introduction.md#py_raise-macro)
 ```c
 /// true: success, false: error
 PK_API bool py_dict_apply(py_Ref self, bool (*f)(py_Ref key, py_Ref val, void* ctx), void* ctx);
@@ -1426,25 +1426,25 @@ PK_API c11_mat3x3* py_tomat3x3(py_Ref self);
 PK_API c11_color32 py_tocolor32(py_Ref self);
 ```
 
-### py_json_dumps [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_json_dumps [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `json.dumps(val)`.
 PK_API bool py_json_dumps(py_Ref val, int indent);
 ```
 
-### py_json_loads [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_json_loads [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `json.loads(val)`.
 PK_API bool py_json_loads(const char* source);
 ```
 
-### py_pickle_dumps [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_pickle_dumps [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `pickle.dumps(val)`.
 PK_API bool py_pickle_dumps(py_Ref val);
 ```
 
-### py_pickle_loads [!badge text="raise" variant="danger"](../introduction/#py_raise-macro) [!badge text="return"](../introduction/#py_return-macro)
+### py_pickle_loads [!badge text="raise" variant="danger"](introduction.md#py_raise-macro) [!badge text="return"](introduction.md#py_return-macro)
 ```c
 /// Python equivalent to `pickle.loads(val)`.
 PK_API bool py_pickle_loads(const unsigned char* data, int size);

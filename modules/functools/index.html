@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>functools | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="functools | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="A decorator that caches a function's return value each time it is called. If called later with the same arguments, the cached value is returned, and not re-evaluated.">
+    <meta name="description" content="Helpers for caching calls, reducing a sequence, and pre-filling arguments.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/modules/functools/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/modules/functools/">
     <meta property="og:title" content="functools | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="A decorator that caches a function's return value each time it is called. If called later with the same arguments, the cached value is returned, and not re-evaluated.">
+    <meta property="og:description" content="Helpers for caching calls, reducing a sequence, and pre-filling arguments.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/modules/functools/">
     <meta name="twitter:title" content="functools | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="A decorator that caches a function's return value each time it is called. If called later with the same arguments, the cached value is returned, and not re-evaluated.">
+    <meta name="twitter:description" content="Helpers for caching calls, reducing a sequence, and pre-filling arguments.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/modules/functools.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -227,72 +227,75 @@
 
                 <!-- Page content  -->
 <h1 id="functools">functools</h1>
-<h3 id="functoolscache"><code translate="no" v-pre>functools.cache</code></h3>
-<p>A decorator that caches a function&#x27;s return value each time it is called. If called later with the same arguments, the cached value is returned, and not re-evaluated.</p>
-<h3 id="functoolslru_cachemaxsize128"><code translate="no" v-pre>functools.lru_cache(maxsize=128)</code></h3>
-<p>A decorator that wraps a function with a memoizing callable that saves up to the maxsize most recent calls.</p>
-<h3 id="functoolsreducefunction-sequence-initial"><code translate="no" v-pre>functools.reduce(function, sequence, initial=...)</code></h3>
-<p>Apply a function of two arguments cumulatively to the items of a sequence, from left to right, so as to reduce the sequence to a single value. For example, <code translate="no" v-pre>functools.reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])</code> calculates <code translate="no" v-pre>((((1+2)+3)+4)+5)</code>. The left argument, <code translate="no" v-pre>x</code>, is the accumulated value and the right argument, <code translate="no" v-pre>y</code>, is the update value from the sequence. If the optional <code translate="no" v-pre>initial</code> is present, it is placed before the items of the sequence in the calculation, and serves as a default when the sequence is empty.</p>
-<h3 id="functoolspartialf-args-kwargs"><code translate="no" v-pre>functools.partial(f, *args, **kwargs)</code></h3>
-<p>Return a new partial object which when called will behave like <code translate="no" v-pre>f</code> called with the positional arguments <code translate="no" v-pre>args</code> and keyword arguments <code translate="no" v-pre>kwargs</code>. If more arguments are supplied to the call, they are appended to <code translate="no" v-pre>args</code>. If additional keyword arguments are supplied, they extend and override <code translate="no" v-pre>kwargs</code>.</p>
-<h4 id="source-code">Source code</h4>
-<div id="source-code-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">class cache:
-    def __init__(self, f):
-        self.f = f
-        self.cache = {}
+<p>Helpers for caching calls, reducing a sequence, and pre-filling arguments.</p>
+<retype-table copy-text="| API | Behavior |
+| --- | --- |
+| `@cache` | Cache results without a size limit. |
+| `@lru_cache(maxsize=128)` | Keep up to `maxsize` recently used argument tuples. |
+| `reduce(function, sequence, initial=...)` | Combine items from left to right. An empty sequence needs an initial value. |
+| `partial(function, *args, **kwargs)` | Store arguments for later calls. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>API</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>@cache</code></td>
+<td>Cache results without a size limit.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>@lru_cache(maxsize=128)</code></td>
+<td>Keep up to <code translate="no" v-pre>maxsize</code> recently used argument tuples.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>reduce(function, sequence, initial=...)</code></td>
+<td>Combine items from left to right. An empty sequence needs an initial value.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>partial(function, *args, **kwargs)</code></td>
+<td>Store arguments for later calls.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<h2 id="cache-a-computation">Cache a computation</h2>
+<div id="cache-a-computation-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from functools import lru_cache, reduce
 
-    def __call__(self, *args):
-        if args not in self.cache:
-            self.cache[args] = self.f(*args)
-        return self.cache[args]
+@lru_cache(maxsize=32)
+def fibonacci(n):
+    if n &lt; 2:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
-class lru_cache:
-    def __init__(self, maxsize=128):
-        self.maxsize = maxsize
-        self.cache = {}
-
-    def __call__(self, f):
-        def wrapped(*args):
-            if args in self.cache:
-                res = self.cache.pop(args)
-                self.cache[args] = res
-                return res
-
-            res = f(*args)
-            if len(self.cache) &gt;= self.maxsize:
-                first_key = next(iter(self.cache))
-                self.cache.pop(first_key)
-            self.cache[args] = res
-            return res
-        return wrapped
-
-def reduce(function, sequence, initial=...):
-    it = iter(sequence)
-    if initial is ...:
-        try:
-            value = next(it)
-        except StopIteration:
-            raise TypeError(&quot;reduce() of empty sequence with no initial value&quot;)
-    else:
-        value = initial
-    for element in it:
-        value = function(value, element)
-    return value
-
-class partial:
-    def __init__(self, f, *args, **kwargs):
-        self.f = f
-        if not callable(f):
-            raise TypeError(&quot;the first argument must be callable&quot;)
-        self.args = args
-        self.kwargs = kwargs
-
-    def __call__(self, *args, **kwargs):
-        kwargs.update(self.kwargs)
-        return self.f(*self.args, *args, **kwargs)
-</code></pre>
+assert fibonacci(10) == 55
+assert reduce(lambda total, value: total + value, [1, 2, 3], 0) == 6</code></pre>
 </doc-codeblock></div>
+<p>The cache decorators accept <strong>positional calls only</strong>, with hashable arguments.
+Use a positive integer <code translate="no" v-pre>maxsize</code>; the implementation does not support
+CPython&#x27;s <code translate="no" v-pre>maxsize=None</code>, zero-size mode, <code translate="no" v-pre>typed</code>, or <code translate="no" v-pre>cache_info()</code>/
+<code translate="no" v-pre>cache_clear()</code> methods. Cached mutable results are returned as the same
+object on later calls.</p>
+<h2 id="partial-calls">Partial calls</h2>
+<div id="partial-calls-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from functools import partial
+
+def label(name, prefix='item'):
+    return prefix + ': ' + name
+
+enemy_label = partial(label, prefix='enemy')
+assert enemy_label('slime') == 'enemy: slime'
+assert enemy_label('slime', prefix='boss') == 'enemy: slime'</code></pre>
+</doc-codeblock></div>
+<p>Stored positional arguments are prepended to new ones. <strong>Stored keyword
+arguments override keywords passed at call time</strong> in this implementation.
+This differs from CPython, where call-time keywords win.</p>
+<p>Implementation: <a href="https://github.com/pocketpy/pocketpy/blob/main/python/functools.py">functools.py</a>.</p>
 
                 
                 <!-- Required only on API pages -->

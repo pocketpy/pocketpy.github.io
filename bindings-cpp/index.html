@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.843875688606">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844317958325">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Write C++ Bindings | Portable Python 3.x Interpreter in Modern C</title>
-    <meta name="title" content="Write C++ Bindings | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="pkpy provides a pybind11 compatible layer which allows users to do convenient bindings. Header files are located in the include/pybind11 directory. Make sure you have added -Iinclude to your compiler flags.">
+    <title>C++ Bindings | Portable Python 3.x Interpreter in Modern C</title>
+    <meta name="title" content="C++ Bindings | Portable Python 3.x Interpreter in Modern C">
+    <meta name="description" content="pocketpy bundles a C++17 binding layer with a pybind11-style API in include/pybind11/. Use these headers with the pocketpy library. It implements a subset of pybind11 and does not use CPython's extension ABI.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/bindings-cpp/">
@@ -21,16 +21,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/bindings-cpp/">
-    <meta property="og:title" content="Write C++ Bindings | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="pkpy provides a pybind11 compatible layer which allows users to do convenient bindings. Header files are located in the include/pybind11 directory. Make sure you have added -Iinclude to your compiler flags.">
+    <meta property="og:title" content="C++ Bindings | Portable Python 3.x Interpreter in Modern C">
+    <meta property="og:description" content="pocketpy bundles a C++17 binding layer with a pybind11-style API in include/pybind11/. Use these headers with the pocketpy library. It implements a subset of pybind11 and does not use CPython's extension ABI.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/bindings-cpp/">
-    <meta name="twitter:title" content="Write C++ Bindings | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="pkpy provides a pybind11 compatible layer which allows users to do convenient bindings. Header files are located in the include/pybind11 directory. Make sure you have added -Iinclude to your compiler flags.">
+    <meta name="twitter:title" content="C++ Bindings | Portable Python 3.x Interpreter in Modern C">
+    <meta name="twitter:description" content="pocketpy bundles a C++17 binding layer with a pybind11-style API in include/pybind11/. Use these headers with the pocketpy library. It implements a subset of pybind11 and does not use CPython's extension ABI.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/bindings-cpp.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/logo.png" />
-    <link href="../resources/css/retype.css?v=4.6.0.843875688606" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.844317958325" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.843875688606" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.843875688606" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.844317958325" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.844317958325" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -74,7 +74,7 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                 </svg>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
                         <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                     <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                 </svg>
-                                <span>Github</span>
+                                <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
@@ -163,7 +163,7 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
                                         </svg>
@@ -187,11 +187,11 @@
                                     </a>
                                 </li>
                                 <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/blueloveth/pocketpy" target="_blank">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/pocketpy/pocketpy" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
                                             <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
                                         </svg>
-                                        <span>Github</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
@@ -226,273 +226,183 @@
                 <doc-page-actions></doc-page-actions>
 
                 <!-- Page content  -->
-<h1 id="write-c-bindings">Write C++ Bindings</h1>
-<h2 id="quick-start">Quick Start</h2>
-<p>pkpy provides a <a href="https://pybind11.readthedocs.io/en/stable/">pybind11</a> compatible layer which allows users to do convenient bindings.
-Header files are located in the <code translate="no" v-pre>include/pybind11</code> directory. Make sure you have added <code translate="no" v-pre>-Iinclude</code> to your compiler flags.</p>
-<p>To begin with, use <code translate="no" v-pre>py::scoped_interpreter guard{}</code> to start the interpreter before using any Python objects.
-Or explicitly call <code translate="no" v-pre>py::interpreter::initialize()</code> and <code translate="no" v-pre>py::interpreter::finalize()</code>.</p>
-<h3 id="module">module</h3>
-<div id="module-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">#include &lt;pybind11/pybind11.h&gt;
+<h1 id="c-bindings">C++ bindings</h1>
+<p>pocketpy bundles a <strong>C++17 binding layer with a pybind11-style API</strong> in
+<code translate="no" v-pre>include/pybind11/</code>. Use these headers with the pocketpy library.
+It implements a subset of pybind11 and does not use CPython&#x27;s extension ABI.</p>
+<h2 id="a-complete-embedded-module">A complete embedded module</h2>
+<p>Save this as <code translate="no" v-pre>main.cpp</code>. Link it to the <code translate="no" v-pre>pocketpy</code> CMake target as in
+<a href="../quick-start/">quick start</a>, and set
+<code translate="no" v-pre>target_compile_features(my_app PRIVATE cxx_std_17)</code>.</p>
+<div id="a-complete-embedded-module-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">#include &lt;pybind11/embed.h&gt;
+#include &lt;iostream&gt;
+
 namespace py = pybind11;
+
+struct Point {
+    double x;
+    double y;
+
+    Point(double x, double y) : x(x), y(y) {}
+    double squared_length() const { return x * x + y * y; }
+};
 
 PYBIND11_EMBEDDED_MODULE(example, m) {
-    m.def(&quot;add&quot;, [](int a, int b) {
-        return a + b;
-    });
+    m.def(&quot;scale&quot;, [](double value, double factor) {
+        return value * factor;
+    }, py::arg(&quot;value&quot;), py::arg(&quot;factor&quot;) = 2.0);
 
-    auto math = m.def_submodule(&quot;math&quot;);
-}</code></pre>
-</doc-codeblock></div>
-<h3 id="function">function</h3>
-<div id="function-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">int add(int a, int b) { return a + b; }
-
-int add(int a, int b, int c) { return a + b + c; }
-
-void register_function(py::module_&amp; m)
-{
-    m.def(&quot;add&quot;, py::overload_cast&lt;int, int&gt;(&amp;add));
-
-    // support function overload
-    m.def(&quot;add&quot;, py::overload_cast&lt;int, int, int&gt;(&amp;add));
-
-    // bind with default arguments
-    m.def(&quot;sub&quot;, [](int a, int b) { 
-        return a - b; 
-    }, py::arg(&quot;a&quot;) = 1, py::arg(&quot;b&quot;) = 2);
-
-    // bind *args
-    m.def(&quot;add&quot;, [](py::args args) {
-        int sum = 0;
-        for (auto&amp; arg : args) {
-            sum += arg.cast&lt;int&gt;();
-        }
-        return sum;
-    });
-
-    // bind **kwargs
-    m.def(&quot;add&quot;, [](py::kwargs kwargs) {
-        int sum = 0;
-        for (auto item : kwargs) {
-            sum += item.second.cast&lt;int&gt;();
-        }
-        return sum;
-    });
-}</code></pre>
-</doc-codeblock></div>
-<h3 id="class">class</h3>
-<div id="class-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">struct Point
-{
-    const int x;
-    int y;
-
-public:
-    Point() : x(0), y(0) {}
-
-    Point(int x, int y) : x(x), y(y) {}
-
-    Point(const Point&amp; p) : x(p.x), y(p.y) {}
-
-    std::string stringfy() const { 
-        return &quot;(&quot; + std::to_string(x) + &quot;, &quot; + std::to_string(y) + &quot;)&quot;; 
-    }
-};
-
-struct Point3D : Point
-{
-private:
-    int z;
-
-public:
-    Point3D(int x, int y, int z) : Point(x, y), z(z) {}
-
-    int get_z() const { return z; }
-
-    void set_z(int z) { this-&gt;z = z; }
-};
-
-void bind_class(py::module_&amp; m)
-{
     py::class_&lt;Point&gt;(m, &quot;Point&quot;)
-        .def(py::init&lt;&gt;())
-        .def(py::init&lt;int, int&gt;())
-        .def(py::init&lt;const Point&amp;&gt;())
-        .def_readonly(&quot;x&quot;, &amp;Point::x)
+        .def(py::init&lt;double, double&gt;())
+        .def_readwrite(&quot;x&quot;, &amp;Point::x)
         .def_readwrite(&quot;y&quot;, &amp;Point::y)
-        .def(&quot;__str__&quot;, &amp;Point::stringfy);
+        .def(&quot;squared_length&quot;, &amp;Point::squared_length);
+}
 
-    // only support single inheritance
-    py::class_&lt;Point3D, Point&gt;(m, &quot;Point3D&quot;, py::dynamic_attr())
-        .def(py::init&lt;int, int, int&gt;())
-        .def_property(&quot;z&quot;, &amp;Point3D::get_z, &amp;Point3D::set_z);
-
-    // dynamic_attr will enable the dict of bound class
+int main() {
+    py::scoped_interpreter guard{};
+    try {
+        py::exec(R&quot;(
+from example import Point, scale
+point = Point(3.0, 4.0)
+assert point.squared_length() == 25.0
+assert scale(3.0) == 6.0
+assert scale(3.0, factor=4.0) == 12.0
+)&quot;);
+    } catch(const py::python_error&amp; error) {
+        std::cerr &lt;&lt; error.what() &lt;&lt; '\n';
+        return 1;
+    }
+    return 0;
 }</code></pre>
 </doc-codeblock></div>
-<h3 id="operators">operators</h3>
-<div id="operators-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">#include &lt;pybind11/operators.h&gt;
-namespace py = pybind11;
+<p>The module macro registers initialization code that runs when the interpreter
+starts. Create the guard before any Python object and destroy all Python
+objects before the guard. Use one interpreter lifetime per process.</p>
+<p>The explicit lifecycle functions are <code translate="no" v-pre>py::initialize()</code> and
+<code translate="no" v-pre>py::finalize()</code>. If using the binding layer, initialize through this layer
+so that embedded-module registrations are run.</p>
+<h2 id="functions-and-overloads">Functions and overloads</h2>
+<p>Use function pointers or lambdas with <code translate="no" v-pre>m.def()</code>. Register argument defaults
+with <code translate="no" v-pre>py::arg</code>; C++ default arguments alone do not provide Python defaults.</p>
+<p>For an overloaded C++ function, select the overload explicitly:</p>
+<div id="functions-and-overloads-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
 
-struct Int {
-    int value;
-
-    Int(int value) : value(value) {}
-
-    Int operator+(const Int&amp; other) const {
-        return Int(value + other.value);
-    }
-
-    Int operator-(const Int&amp; other) const {
-        return Int(value - other.value);
-    }
-
-    bool operator==(const Int&amp; other) const {
-        return value == other.value;
-    }
-
-    bool operator!=(const Int&amp; other) const {
-        return value != other.value;
-    }
-};
-
-void bind_operators(py::module_&amp; m)
-{
-    py::class_&lt;Int&gt;(m, &quot;Int&quot;)
-        .def(py::init&lt;int&gt;())
-        .def(py::self + py::self)
-        .def(py::self - py::self)
-        .def(py::self == py::self)
-        .def(py::self != py::self);
-        // other operators are similar
+void bind_add(py::module_&amp; m) {
+    m.def(&quot;add&quot;, py::overload_cast&lt;int, int&gt;(&amp;add));
+    m.def(&quot;add&quot;, py::overload_cast&lt;double, double&gt;(&amp;add));
 }</code></pre>
 </doc-codeblock></div>
-<h3 id="pyobject">py::object</h3>
-<p><code translate="no" v-pre>py::object</code> is just simple wrapper around <code translate="no" v-pre>PyVar</code>. It supports some convenient methods to interact with Python objects.</p>
-<p>here are some common methods:</p>
-<div id="pyobject-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">obj.attr(&quot;x&quot;); // access attribute
-obj[1]; // access item
-
-obj.is_none(); // same as obj is None in Python
-obj.is(obj2); // same as obj is obj2 in Python
-
-// operators
-obj + obj2; // same as obj + obj2 in Python
-// ...
-obj == obj2; // same as obj == obj2 in Python
-// ...
-
-obj(...); // same as obj.__call__(...)
-
-py::cast(obj); // cast to Python object
-obj.cast&lt;T&gt;; // cast to C++ type
-
-py::type::of(obj); // get type of obj
-py::type::of&lt;T&gt;(); // get type of T, if T is registered</code></pre>
+<p>The example assumes values whose integer sum fits in C++ <code translate="no" v-pre>int</code>.
+For variable arguments, accept <code translate="no" v-pre>py::args</code> or <code translate="no" v-pre>py::kwargs</code>.
+The repository&#x27;s
+<a href="https://github.com/pocketpy/pocketpy/blob/main/include/pybind11/tests/function.cpp">function tests</a>
+show supported combinations.</p>
+<h2 id="classes-and-properties">Classes and properties</h2>
+<retype-table copy-text="| Binding | Purpose |
+| --- | --- |
+| `.def(py::init&lt;Args...&gt;())` | Expose a constructor. |
+| `.def(&quot;name&quot;, &amp;T::method)` | Expose an instance method. |
+| `.def_readwrite(&quot;name&quot;, &amp;T::field)` | Read/write field. |
+| `.def_readonly(&quot;name&quot;, &amp;T::field)` | Read-only field. |
+| `.def_property(&quot;name&quot;, getter, setter)` | Computed property. |
+| `py::class_&lt;Derived, Base&gt;` | Register single inheritance. |
+| `py::dynamic_attr()` | Allow additional Python attributes on an instance. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Binding</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>.def(py::init&lt;Args...&gt;())</code></td>
+<td>Expose a constructor.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>.def(&quot;name&quot;, &amp;T::method)</code></td>
+<td>Expose an instance method.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>.def_readwrite(&quot;name&quot;, &amp;T::field)</code></td>
+<td>Read/write field.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>.def_readonly(&quot;name&quot;, &amp;T::field)</code></td>
+<td>Read-only field.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>.def_property(&quot;name&quot;, getter, setter)</code></td>
+<td>Computed property.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>py::class_&lt;Derived, Base&gt;</code></td>
+<td>Register single inheritance.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>py::dynamic_attr()</code></td>
+<td>Allow additional Python attributes on an instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>Use <code translate="no" v-pre>&lt;pybind11/operators.h&gt;</code> for bindings such as
+<code translate="no" v-pre>.def(py::self + py::self)</code>. The operator must also be supported by
+<a href="../features/basic/#special-methods">pocketpy&#x27;s object model</a>.</p>
+<p>For pointer and reference results, choose the return-value policy to match
+ownership. <code translate="no" v-pre>reference</code> leaves ownership with C++; <code translate="no" v-pre>take_ownership</code> transfers
+it to the Python wrapper; <code translate="no" v-pre>reference_internal</code> associates the result with its
+parent. Never return a reference to a local C++ variable.</p>
+<h2 id="work-with-python-values">Work with Python values</h2>
+<p>This fragment runs while a <code translate="no" v-pre>py::scoped_interpreter</code> is alive:</p>
+<div id="work-with-python-values-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">py::object result = py::eval(&quot;sum([1, 2, 3])&quot;);
+int total = result.cast&lt;int&gt;();               // 6
+py::object math = py::module_::import(&quot;math&quot;);
+double root = math.attr(&quot;sqrt&quot;)(9.0).cast&lt;double&gt;();  // 3.0
+py::list values;
+values.append(py::int_(1));
+values.append(py::int_(2));</code></pre>
 </doc-codeblock></div>
-<p>you can also create some builtin objects with their according wrappers:</p>
-<div id="pyobject-code-2" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-cpp"><code v-pre class="language-cpp">py::bool_ b = {true};
-py::int_ i = {1};
-py::float_ f = {1.0};
-py::str s = {&quot;hello&quot;};
-py::list l = {1, 2, 3};
-py::tuple t = {1, 2, 3};
-// ...</code></pre>
-</doc-codeblock></div>
-<h2 id="more-examples">More Examples</h2>
-<p>More examples please see the test <a href="https://github.com/pocketpy/gsoc-2024-dev/tree/main/pybind11/tests">folder</a> in the GSoC repository. All tested features are supported.</p>
-<h2 id="limits-and-comparison">Limits and Comparison</h2>
-<p>This is a feature list of pybind11 for pocketpy. It lists all completed and pending features. It also lists the features that cannot be implemented in the current version of pocketpy.</p>
-<h3 id="function-1"><a href="https://pybind11.readthedocs.io/en/stable/advanced/functions.html">Function</a></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Function overloading</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Return value policy</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> is_prepend</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>*args</code> and <code translate="no" v-pre>**kwargs</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Keep-alive</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Call Guard</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Default arguments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Keyword-Only arguments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Positional-Only arguments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Allow/Prohibiting None arguments</li>
-</ul>
-<h3 id="class-1"><a href="https://pybind11.readthedocs.io/en/stable/classes.html">Class</a></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Creating bindings for a custom type</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Binding lambda functions</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Dynamic attributes</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Inheritance and automatic downcasting</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Enumerations and internal types</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Instance and static fields</li>
-</ul>
-<blockquote>
-<p>Binding static fields may never be implemented in pocketpy because it requires a metaclass, which is a heavy and infrequently used feature.</p>
-</blockquote>
-<h3 id="exceptions"><a href="https://pybind11.readthedocs.io/en/stable/advanced/exceptions.html">Exceptions</a></h3>
-<p>Need further discussion.</p>
-<h3 id="smart-pointers"><a href="https://pybind11.readthedocs.io/en/stable/advanced/smart_ptrs.html">Smart pointers</a></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> std::shared_ptr</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> std::unique_ptr</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Custom smart pointers</li>
-</ul>
-<h3 id="type-conversions"><a href="https://pybind11.readthedocs.io/en/stable/advanced/cast/index.html">Type conversions</a></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Python built-in types</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> STL Containers</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Functional</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Chrono</li>
-</ul>
-<h3 id="python-c-interface"><a href="https://pybind11.readthedocs.io/en/stable/advanced/pycpp/object.html">Python C++ interface</a></h3>
-<p>Need further discussion.</p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>object</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>none</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>type</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>bool_</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>int_</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>float_</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>str</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>bytes</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>bytearray</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>tuple</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>list</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>set</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>dict</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>slice</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>iterable</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>iterator</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>function</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>buffer</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code translate="no" v-pre>memoryview</code></li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code translate="no" v-pre>capsule</code></li>
-</ul>
-<h3 id="miscellaneous"><a href="https://pybind11.readthedocs.io/en/stable/advanced/misc.html">Miscellaneous</a></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Global Interpreter Lock (GIL)</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Binding sequence data types, iterators, the slicing protocol, etc.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Convenient operators binding</li>
-</ul>
-<h3 id="differences-between-cpython-and-pocketpy">Differences between CPython and pocketpy</h3>
+<p>Use <code translate="no" v-pre>obj.attr(&quot;name&quot;)</code> for attributes, <code translate="no" v-pre>obj[key]</code> for items,
+<code translate="no" v-pre>obj(...)</code> for calls, <code translate="no" v-pre>obj.cast&lt;T&gt;()</code> to convert to C++, and
+<code translate="no" v-pre>py::cast(value)</code> to construct a Python value from C++.
+<code translate="no" v-pre>py::object</code> manages a rooted handle; a plain <code translate="no" v-pre>py::handle</code> does not own one.</p>
+<p>Include <code translate="no" v-pre>&lt;pybind11/stl.h&gt;</code> for supported STL container conversions, including
+vectors and maps. These conversions copy container contents; they are not
+shared views into the C++ container.</p>
+<h2 id="compatibility-boundaries">Compatibility boundaries</h2>
+<p>The bundled headers and
+<a href="https://github.com/pocketpy/pocketpy/tree/main/include/pybind11/tests">tests</a>
+are the reference for supported features. In particular:</p>
 <ul>
 <li>
-<p>only <code translate="no" v-pre>add</code>, <code translate="no" v-pre>sub</code> and <code translate="no" v-pre>mul</code> have corresponding right versions in pocketpy. So if you bind <code translate="no" v-pre>int() &gt;&gt; py::self</code>, it will has no effect in pocketpy.</p>
+<p>Multiple inheritance, CPython&#x27;s buffer protocol, and GIL APIs are unavailable.</p>
 </li>
 <li>
-<p><code translate="no" v-pre>__new__</code> and <code translate="no" v-pre>__del__</code> are not supported in pocketpy.</p>
+<p>The bundled conversion layer does not provide the full upstream smart-pointer,
+NumPy, chrono, or callable conversion ecosystem.</p>
 </li>
 <li>
-<p>in-place operators, such as <code translate="no" v-pre>+=</code>, <code translate="no" v-pre>-=</code>, <code translate="no" v-pre>*=</code>, etc., are not supported in pocketpy.</p>
+<p>Python syntax and behavior follow the <a href="../features/differences/">pocketpy compatibility guide</a>,
+including positional argument rules and in-place special-method limitations.</p>
 </li>
 <li>
-<p>the return value of <code translate="no" v-pre>globals</code> is immutable in pocketpy.</p>
+<p>The binding layer maintains process-wide object-pool and type-registration
+state. Do not assume its handles can be shared across VMs or used concurrently.</p>
 </li>
 </ul>
+<p>Calls such as <code translate="no" v-pre>py::exec()</code> translate a Python failure to <code translate="no" v-pre>py::python_error</code>,
+whose <code translate="no" v-pre>what()</code> contains the traceback. Other binding operations can use
+<code translate="no" v-pre>py::error_already_set</code> to signal a pending VM exception. Follow the
+<a href="https://github.com/pocketpy/pocketpy/blob/main/include/pybind11/tests/error.cpp">exception tests</a>
+when adding custom exception handling.</p>
 
                 
                 <!-- Required only on API pages -->
@@ -506,7 +416,7 @@ py::tuple t = {1, 2, 3};
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Write C Bindings</span>
+                                <span class="block mt-1">C bindings</span>
                             </span>
                         </a>
                     </div>
@@ -515,7 +425,7 @@ py::tuple t = {1, 2, 3};
                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../features/basic/">
                             <span>
                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Basic Features</span>
+                                <span class="block mt-1">Language features</span>
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         </a>
@@ -559,6 +469,6 @@ py::tuple t = {1, 2, 3};
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Write C++ Bindings", level: 1, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/bindings-cpp.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "C++ bindings", level: 1, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/bindings-cpp.md" }</script>
 </body>
 </html>
