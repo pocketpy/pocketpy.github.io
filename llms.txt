@@ -9,7 +9,6 @@
 - [C++ Bindings](https://pocketpy.github.io/bindings-cpp.md): pocketpy bundles a C++17 binding layer with a pybind11-style API in include/pybind11/. Use these headers with the pocketpy library. It implements a subset of pybind11 and does not use CPython's extension ABI.
 - [Module Reference](https://pocketpy.github.io/modules/index.md): pocketpy includes a focused set of Python modules and game-oriented extensions. These pages describe the APIs shipped in this repository, including differences from CPython.
 - [Script style](https://pocketpy.github.io/coding-style-guide.md): These conventions keep pocketpy examples readable and make scripts easier to share with Python users. Runtime restrictions belong in the compatibility guide; style preferences do not change language behavior.
-- [Performance](https://pocketpy.github.io/performance.md): Measure pocketpy with your application's workload, compiler, target hardware, and enabled features. Results from one script or an older interpreter version do not predict the performance of all Python programs.
 - [License](https://pocketpy.github.io/license.md): pkpy is licensed under the MIT License.
 
 ## C API
