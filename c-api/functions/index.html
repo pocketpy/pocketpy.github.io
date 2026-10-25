@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846228435406">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846231067483">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -35,12 +35,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.846228435406" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.846231067483" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.846228435406" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.846228435406" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.846228435406" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.846231067483" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -293,17 +293,17 @@ PK_API int py_gc_collect();</code></pre>
 </doc-codeblock></div>
 <h3 id="py_malloc">py_malloc</h3>
 <div id="py_malloc-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-c"><code v-pre class="language-c">/// Wrapper for `PK_MALLOC(size)`.
+<pre translate="no" class="language-c"><code v-pre class="language-c">/// Allocate memory through the application-level malloc callback.
 PK_API void* py_malloc(size_t size);</code></pre>
 </doc-codeblock></div>
 <h3 id="py_realloc">py_realloc</h3>
 <div id="py_realloc-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-c"><code v-pre class="language-c">/// Wrapper for `PK_REALLOC(ptr, size)`.
+<pre translate="no" class="language-c"><code v-pre class="language-c">/// Reallocate memory through the application-level realloc callback.
 PK_API void* py_realloc(void* ptr, size_t size);</code></pre>
 </doc-codeblock></div>
 <h3 id="py_free">py_free</h3>
 <div id="py_free-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-c"><code v-pre class="language-c">/// Wrapper for `PK_FREE(ptr)`.
+<pre translate="no" class="language-c"><code v-pre class="language-c">/// Free memory through the application-level free callback.
 PK_API void py_free(void* ptr);</code></pre>
 </doc-codeblock></div>
 <h3 id="py_true">py_True</h3>

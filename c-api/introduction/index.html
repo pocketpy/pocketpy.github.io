@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846228435406">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846231067483">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>C API Essentials | Portable Python 3.x Interpreter in Modern C</title>
     <meta name="title" content="C API Essentials | Portable Python 3.x Interpreter in Modern C">
-    <meta name="description" content="Include pocketpy.h and initialize the runtime before calling the API. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
+    <meta name="description" content="Include pocketpy.h and initialize the runtime before working with Python values. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pocketpy.github.io/c-api/introduction/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pocketpy.github.io/c-api/introduction/">
     <meta property="og:title" content="C API Essentials | Portable Python 3.x Interpreter in Modern C">
-    <meta property="og:description" content="Include pocketpy.h and initialize the runtime before calling the API. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
+    <meta property="og:description" content="Include pocketpy.h and initialize the runtime before working with Python values. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
     <meta property="og:site_name" content="pocketpy">
     <meta property="og:locale" content="en_US">
 
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pocketpy.github.io/c-api/introduction/">
     <meta name="twitter:title" content="C API Essentials | Portable Python 3.x Interpreter in Modern C">
-    <meta name="twitter:description" content="Include pocketpy.h and initialize the runtime before calling the API. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
+    <meta name="twitter:description" content="Include pocketpy.h and initialize the runtime before working with Python values. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://pocketpy.github.io/c-api/introduction.md">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.846228435406" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.846231067483" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.846228435406" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.846228435406" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.846228435406" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.846231067483" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -227,7 +227,7 @@
 
                 <!-- Page content  -->
 <h1 id="c-api-essentials">C API essentials</h1>
-<p>Include <code translate="no" v-pre>pocketpy.h</code> and initialize the runtime before calling the API.
+<p>Include <code translate="no" v-pre>pocketpy.h</code> and initialize the runtime before working with Python values.
 The <a href="../../quick-start/">quick start</a> has a complete host program.
 Public declarations live in
 <a href="https://github.com/pocketpy/pocketpy/blob/main/include/pocketpy/pocketpy.h">pocketpy.h</a>;
@@ -430,6 +430,23 @@ another VM. Each VM can be used by only one thread at a time; see
 <p><code translate="no" v-pre>py_resetvm()</code> discards the current VM&#x27;s state, invalidating its references.
 <code translate="no" v-pre>py_finalize()</code> destroys all VMs and is terminal for the process: the API must
 not be used afterward.</p>
+<h2 id="application-allocators">Application allocators</h2>
+<p><code translate="no" v-pre>py_malloc()</code>, <code translate="no" v-pre>py_realloc()</code>, and <code translate="no" v-pre>py_free()</code> call the allocator function
+pointers in <code translate="no" v-pre>py_appcallbacks()</code>. They default to the C standard library and
+are available before <code translate="no" v-pre>py_initialize()</code>. The same allocator serves every VM,
+including compilation, module loading, and VM initialization and finalization.</p>
+<p>To install a custom allocator, set all three callbacks before the first
+pocketpy allocation:</p>
+<div id="application-allocators-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-c"><code v-pre class="language-c">py_AppCallbacks* callbacks = py_appcallbacks();
+callbacks-&gt;malloc = my_malloc;    /* void* (size_t) */
+callbacks-&gt;realloc = my_realloc;  /* void* (void*, size_t) */
+callbacks-&gt;free = my_free;        /* void (void*) */
+py_initialize();</code></pre>
+</doc-codeblock></div>
+<p>The callbacks must follow the C allocation functions&#x27; contracts and support
+calls from all threads that use pocketpy. Keep them installed until all
+pocketpy memory has been freed, including any buffers owned by the host.</p>
 
                 
                 <!-- Required only on API pages -->

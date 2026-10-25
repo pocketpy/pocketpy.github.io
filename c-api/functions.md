@@ -80,19 +80,19 @@ PK_API int py_gc_collect();
 
 ### py_malloc 
 ```c
-/// Wrapper for `PK_MALLOC(size)`.
+/// Allocate memory through the application-level malloc callback.
 PK_API void* py_malloc(size_t size);
 ```
 
 ### py_realloc 
 ```c
-/// Wrapper for `PK_REALLOC(ptr, size)`.
+/// Reallocate memory through the application-level realloc callback.
 PK_API void* py_realloc(void* ptr, size_t size);
 ```
 
 ### py_free 
 ```c
-/// Wrapper for `PK_FREE(ptr)`.
+/// Free memory through the application-level free callback.
 PK_API void py_free(void* ptr);
 ```
 

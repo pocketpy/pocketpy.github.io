@@ -14,7 +14,7 @@
 
 ## C API
 
-- [C API Essentials](https://pocketpy.github.io/c-api/introduction.md): Include pocketpy.h and initialize the runtime before calling the API. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.
+- [C API Essentials](https://pocketpy.github.io/c-api/introduction.md): Include pocketpy.h and initialize the runtime before working with Python values. The quick start has a complete host program. Public declarations live in pocketpy.h; the function reference is generated from that header.
 - [Execution and Exceptions](https://pocketpy.github.io/c-api/execution.md): API
 - [Modules and Host Callbacks](https://pocketpy.github.io/c-api/modules.md): A module holds Python globals. Native modules created with py_newmodule() can be imported by scripts in the current VM, just like source modules.
 - [Functions](https://pocketpy.github.io/c-api/functions.md)
