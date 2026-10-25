@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846231067483">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846240882713">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/logo.png" />
-    <link href="../resources/css/retype.css?v=4.6.0.846231067483" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.846240882713" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.846240882713" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.846231067483" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.846240882713" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=4.6.0.846240882713" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -63,7 +63,7 @@
                             <img class="max-h-10 md:inline-block" src="../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">pocketpy</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v2.2.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v2.2.1</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -232,7 +232,7 @@ options that change what the interpreter can do.</p>
 <h2 id="cmake-options">CMake options</h2>
 <p>Pass options when configuring the build:</p>
 <div id="cmake-options-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DPK_BUILD_STATIC_MAIN=ON -DPK_BUILD_MODULE_LZ4=ON
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DPK_BUILD_STATIC_MAIN=ON
 cmake --build build --config Release</code></pre>
 </doc-codeblock></div>
 <p>When embedding with <code translate="no" v-pre>add_subdirectory(pocketpy)</code>, set cache options <strong>before</strong>
@@ -318,12 +318,9 @@ the standalone <code translate="no" v-pre>main</code> executable and a library.<
 <p>Memory allocation defaults to the C standard library. Hosts can provide a
 process-wide allocator through <code translate="no" v-pre>py_appcallbacks()</code> before initialization; see
 <a href="../c-api/introduction/#application-allocators">application allocators</a>.</p>
-<p>The following modules are optional and default to <code translate="no" v-pre>OFF</code>:</p>
+<p>The periphery module is optional and defaults to <code translate="no" v-pre>OFF</code>:</p>
 <retype-table copy-text="| Option | Module |
 | --- | --- |
-| `PK_BUILD_MODULE_LZ4` | [lz4](modules/lz4.md) |
-| `PK_BUILD_MODULE_CUTE_PNG` | [cute_png](modules/cute_png.md) |
-| `PK_BUILD_MODULE_MSGPACK` | [msgpack](modules/msgpack.md) |
 | `PK_BUILD_MODULE_PERIPHERY` | [periphery](modules/periphery.md), for Linux hardware I/O |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -334,18 +331,6 @@ process-wide allocator through <code translate="no" v-pre>py_appcallbacks()</cod
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_LZ4</code></td>
-<td><a href="../modules/lz4/">lz4</a></td>
-</tr>
-<tr>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_CUTE_PNG</code></td>
-<td><a href="../modules/cute_png/">cute_png</a></td>
-</tr>
-<tr>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_MSGPACK</code></td>
-<td><a href="../modules/msgpack/">msgpack</a></td>
-</tr>
 <tr>
 <td><code translate="no" v-pre>PK_BUILD_MODULE_PERIPHERY</code></td>
 <td><a href="../modules/periphery/">periphery</a>, for Linux hardware I/O</td>

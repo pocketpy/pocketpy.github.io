@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846231067483">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.846240882713">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../static/logo.png" />
-    <link href="../resources/css/retype.css?v=4.6.0.846231067483" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=4.6.0.846240882713" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.846240882713" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.846231067483" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.846240882713" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -62,7 +62,7 @@
                             <img class="max-h-10 md:inline-block" src="../static/logo.png" alt="" width="40" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">pocketpy</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v2.2.0</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">v2.2.1</span>
                 </div>
     
                 <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
@@ -348,8 +348,7 @@ call forms; see the <a href="../features/differences/#function-arguments">argume
 | [pkpy](pkpy.md) | VM diagnostics, profiling, timeouts, and compute threads. |
 | [stdc](stdc.md) | Native memory and typed C storage. |
 | [sys](sys.md) | Version, platform, arguments, and recursion limit. |
-| [traceback](traceback.md) | Exception reports. |
-| [picoterm and conio](console.md) | Terminal text and platform keyboard input. |">
+| [traceback](traceback.md) | Exception reports. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -391,10 +390,6 @@ call forms; see the <a href="../features/differences/#function-arguments">argume
 <td><a href="traceback/">traceback</a></td>
 <td>Exception reports.</td>
 </tr>
-<tr>
-<td><a href="console/">picoterm and conio</a></td>
-<td>Terminal text and platform keyboard input.</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -431,13 +426,10 @@ call forms; see the <a href="../features/differences/#function-arguments">argume
 </div>
 </retype-table>
 <h2 id="optional-native-modules">Optional native modules</h2>
-<p>These modules default to <strong>off</strong> in CMake. See <a href="../build/">build configuration</a>
-for enabling them and initializing native dependencies.</p>
+<p>The periphery module defaults to <strong>off</strong> in CMake. See
+<a href="../build/">build configuration</a> for enabling it and initializing its native dependency.</p>
 <retype-table copy-text="| Module | Required option |
 | --- | --- |
-| [cute_png](cute_png.md) | `PK_BUILD_MODULE_CUTE_PNG=ON` |
-| [lz4](lz4.md) | `PK_BUILD_MODULE_LZ4=ON` |
-| [msgpack](msgpack.md) | `PK_BUILD_MODULE_MSGPACK=ON` |
 | [periphery](periphery.md) | `PK_BUILD_MODULE_PERIPHERY=ON`, Linux target |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -448,18 +440,6 @@ for enabling them and initializing native dependencies.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="cute_png/">cute_png</a></td>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_CUTE_PNG=ON</code></td>
-</tr>
-<tr>
-<td><a href="lz4/">lz4</a></td>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_LZ4=ON</code></td>
-</tr>
-<tr>
-<td><a href="msgpack/">msgpack</a></td>
-<td><code translate="no" v-pre>PK_BUILD_MODULE_MSGPACK=ON</code></td>
-</tr>
 <tr>
 <td><a href="periphery/">periphery</a></td>
 <td><code translate="no" v-pre>PK_BUILD_MODULE_PERIPHERY=ON</code>, Linux target</td>
