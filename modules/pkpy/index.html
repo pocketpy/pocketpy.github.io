@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.847049914849">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.847783206140">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../static/logo.png" />
-    <link href="../../resources/css/retype.css?v=4.6.0.847049914849" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.847783206140" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.847049914849" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.847783206140" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.847049914849" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.847049914849" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.847783206140" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.847783206140" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -237,8 +237,7 @@
 | `profiler_begin()`, `profiler_end()` | Start/stop line profiling; see the [startup limitation](../features/profiling.md#profile-execution-in-an-embedded-host). |
 | `profiler_reset()`, `profiler_report()` | Reset measurements, or stop active profiling and return a report dictionary. |
 | `ComputeThread` | Run independent jobs in another VM; requires thread support. |
-| `watchdog_begin(timeout)`, `watchdog_end()` | Enable/disable execution timeout checks; requires watchdog support. |
-| `TValue[type](value)` | Typed value wrapper with a read-only `value` property. |">
+| `watchdog_begin(timeout)`, `watchdog_end()` | Enable/disable execution timeout checks; requires watchdog support. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -280,10 +279,6 @@
 <td><code translate="no" v-pre>watchdog_begin(timeout)</code>, <code translate="no" v-pre>watchdog_end()</code></td>
 <td>Enable/disable execution timeout checks; requires watchdog support.</td>
 </tr>
-<tr>
-<td><code translate="no" v-pre>TValue[type](value)</code></td>
-<td>Typed value wrapper with a read-only <code translate="no" v-pre>value</code> property.</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -293,16 +288,13 @@
 
 assert pkpy.currentvm() == 0
 assert type(pkpy.memory_usage()) is int
-print(pkpy.memory_usage_info())
-assert pkpy.TValue[int](42).value == 42</code></pre>
+print(pkpy.memory_usage_info())</code></pre>
 </doc-codeblock></div>
 <p><code translate="no" v-pre>configmacros</code> includes <code translate="no" v-pre>PK_ENABLE_OS</code>, <code translate="no" v-pre>PK_ENABLE_THREADS</code>,
 <code translate="no" v-pre>PK_ENABLE_DETERMINISM</code>, <code translate="no" v-pre>PK_ENABLE_WATCHDOG</code>, <code translate="no" v-pre>PK_GC_MIN_THRESHOLD</code>,
 and <code translate="no" v-pre>PK_VM_STACK_SIZE</code>. It is a diagnostic snapshot; editing it does not
 reconfigure the compiled runtime. The memory estimate is not the process&#x27;s
 resident memory usage.</p>
-<p><code translate="no" v-pre>TValue</code> provides wrappers for <code translate="no" v-pre>int</code>, <code translate="no" v-pre>float</code>, <code translate="no" v-pre>vmath.vec2</code>, and
-<code translate="no" v-pre>vmath.vec2i</code>; it is not a general-purpose runtime generic type.</p>
 <h2 id="watchdog">Watchdog</h2>
 <p>When built with <code translate="no" v-pre>PK_ENABLE_WATCHDOG=ON</code>, <code translate="no" v-pre>watchdog_begin(timeout)</code> takes
 milliseconds and timeout checks can raise <code translate="no" v-pre>TimeoutError</code>.
